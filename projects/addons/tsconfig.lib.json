@@ -15,8 +15,18 @@
     "useDefineForClassFields": false,
     "baseUrl": ".",
     "paths": {
-      "@clr/angular": ["../../dist/clr-angular"],
-      "@clr/angular/*": ["../../dist/clr-angular/*"],
+      "@clr/angular": ["../../dist/clr-angular/types/clr-angular.d.ts"],
+      "@clr/angular/data/datagrid": ["../../dist/clr-angular/types/clr-angular-data-datagrid.d.ts"],
+      "@clr/angular/forms": ["../../dist/clr-angular/types/clr-angular-forms.d.ts"],
+      "@clr/angular/icon": ["../../dist/clr-angular/types/clr-angular-icon.d.ts"],
+      "@clr/angular/layout/tabs": ["../../dist/clr-angular/types/clr-angular-layout-tabs.d.ts"],
+      "@clr/angular/popover/common": ["../../dist/clr-angular/types/clr-angular-popover-common.d.ts"],
+      "@clr/angular/popover/dropdown": ["../../dist/clr-angular/types/clr-angular-popover-dropdown.d.ts"],
+      "@clr/angular/popover/signpost": ["../../dist/clr-angular/types/clr-angular-popover-signpost.d.ts"],
+      "@clr/angular/progress/spinner": ["../../dist/clr-angular/types/clr-angular-progress-spinner.d.ts"],
+      "@clr/angular/stepper": ["../../dist/clr-angular/types/clr-angular-stepper.d.ts"],
+      "@clr/angular/utils": ["../../dist/clr-angular/types/clr-angular-utils.d.ts"],
+      "@clr/angular/utils/loading": ["../../dist/clr-angular/types/clr-angular-utils-loading.d.ts"],
       "@clr/addons": ["./index.ts"],
       "@clr/addons/*": ["./*"]
     }

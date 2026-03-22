@@ -22,7 +22,6 @@ import { timer } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 import { ProgBarExample } from './progbar-example';
-import { ProgressBarExamplesDemo } from './progress-bar-examples';
 
 @Component({
   selector: 'clr-progress-bar-story-demo',
@@ -71,7 +70,7 @@ import { ProgressBarExamplesDemo } from './progress-bar-examples';
       ></progress>
     </div>
   `,
-  imports: [ClrIcon, ClrIconModule, NgClass, ProgressBarExamplesDemo],
+  imports: [ClrIcon, ClrIconModule, NgClass],
 })
 export class ProgressBarStoryDemo {
   @HostBinding('style.width.%') width = 100;

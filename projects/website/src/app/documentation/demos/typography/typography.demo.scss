@@ -5,6 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
+@use 'sass:map';
 @use 'variables.tokens' as tokens;
 @use 'variables/variables' as variables;
 
@@ -51,7 +52,7 @@
   }
 }
 
-@media screen and (min-width: map-get(variables.$clr-grid-breakpoints, md)) {
+@media screen and (min-width: map.get(variables.$clr-grid-breakpoints, md)) {
   .nowrap-md {
     white-space: nowrap;
   }

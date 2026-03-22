@@ -17,7 +17,6 @@ import { DocTabsComponent } from '../../../shared/doc-tabs/doc-tabs.component';
 import { LinkCardsComponent, LinkCardsLink } from '../../../shared/link-cards/link-cards.component';
 import { ComponentList, NestingTableComponent } from '../../../shared/nesting-table/nesting-table.component';
 import { StyleDocsComponent } from '../../../shared/style-docs/style-docs.component';
-import { ThemedImageComponent } from '../../../shared/themed-image/themed-image.component';
 import { ClarityDocComponent } from '../clarity-doc';
 import { formsPatternLink } from '../pattern-links';
 
@@ -35,7 +34,6 @@ import { formsPatternLink } from '../pattern-links';
     ClrRangeModule,
     ClrCommonFormsModule,
     FormsModule,
-    ThemedImageComponent,
     RouterLink,
     DocTabActiveDirective,
     RangeBasicDemo,

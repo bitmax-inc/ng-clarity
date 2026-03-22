@@ -16,7 +16,6 @@ import { LinkCardsComponent, LinkCardsLink } from '../../../shared/link-cards/li
 import { ComponentList, NestingTableComponent } from '../../../shared/nesting-table/nesting-table.component';
 import { StackblitzExampleComponent } from '../../../shared/stackblitz-example/stackblitz-example.component';
 import { StyleDocsComponent } from '../../../shared/style-docs/style-docs.component';
-import { ThemedImageComponent } from '../../../shared/themed-image/themed-image.component';
 import { ClarityDocComponent } from '../clarity-doc';
 import { formsPatternLink } from '../pattern-links';
 
@@ -57,7 +56,6 @@ export class ExampleComponent {
     FormsModule,
     ClrCommonFormsModule,
     ClrTextareaModule,
-    ThemedImageComponent,
     StackblitzExampleComponent,
     ClrIcon,
     ClrIconModule,

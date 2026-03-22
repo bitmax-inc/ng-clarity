@@ -7,9 +7,7 @@
 
 import { Component, ViewChild } from '@angular/core';
 import {
-  ClrIcon,
   ClrIconModule,
-  ClrIfOpen,
   ClrPopoverContent,
   ClrPopoverHostDirective,
   ClrSignpost,
@@ -74,9 +72,7 @@ export class ExampleComponent {
     ClrStopEscapePropagationDirective,
     ClrPopoverHostDirective,
     ClrSignpostModule,
-    ClrIcon,
     ClrIconModule,
-    ClrIfOpen,
     ClrPopoverContent,
     StackblitzExampleComponent,
   ],

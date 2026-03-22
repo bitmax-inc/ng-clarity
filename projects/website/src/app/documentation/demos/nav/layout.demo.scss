@@ -5,6 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
+@use 'sass:map';
 @use 'variables.tokens' as tokens;
 @use 'variables/variables.layout' as variables;
 
@@ -14,7 +15,7 @@
     padding: tokens.$cds-global-space-9;
     border: tokens.$cds-alias-object-border-width-100 solid;
 
-    @media screen and (max-width: map-get(variables.$clr-grid-breakpoints, sm)) {
+    @media screen and (max-width: map.get(variables.$clr-grid-breakpoints, sm)) {
       display: none;
     }
   }

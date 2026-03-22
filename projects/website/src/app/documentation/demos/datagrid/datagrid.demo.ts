@@ -30,7 +30,6 @@ import { Subscription } from 'rxjs';
 
 import { ClarityDocComponent } from '../clarity-doc';
 import { DatagridDetailAccessibilityGuidance } from './accessibility/datagrid-detail-accessibility-guidance.component';
-import { DatagridBasicStructureDemo } from './basic-structure/basic-structure';
 import { Inventory } from './inventory/inventory';
 import { User } from './inventory/user';
 import { ColorFilter } from './utils/color-filter';
@@ -73,7 +72,6 @@ type DemoRoute = Route & { data: { demoName: string } };
     ClrAccordionModule,
     StyleDocsComponent,
     DatagridDetailAccessibilityGuidance,
-    DatagridBasicStructureDemo,
     DatePipe,
   ],
 })

@@ -35,7 +35,6 @@ import {
   wifiIcon,
 } from '@clr/angular';
 
-import { WizardBasic } from './wizard-basic.demo';
 import { disableFocusTrapProvider } from '../../../shared/disable-focus-trap/disable-focus-trap.provider';
 
 const colorList = ['blue', 'red', 'black', 'orange', 'limegreen', 'purple', 'fuchsia', 'indigo'];
@@ -152,7 +151,6 @@ const defaultModel = {
     ClrAlertModule,
     ClrIcon,
     ClrIconModule,
-    WizardBasic,
   ],
 })
 export class WizardDesignDemo {

@@ -229,7 +229,7 @@ app-root:not(.layout-home) {
   width: 100%;
 }
 
-@media screen and (max-width: map-get(clr-variables.$clr-grid-breakpoints, sm)) {
+@media screen and (max-width: map.get(clr-variables.$clr-grid-breakpoints, sm)) {
   .clrweb-DoxVersusBox {
     &-items {
       flex-direction: column;

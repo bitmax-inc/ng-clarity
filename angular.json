@@ -21,12 +21,9 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": {
-              "base": "dist/docs/demo",
-              "browser": ""
-            },
+            "outputPath": "dist/docs/demo",
             "index": "projects/demo/src/index.html",
             "polyfills": ["projects/demo/src/polyfills.ts"],
             "tsConfig": "projects/demo/tsconfig.app.json",
@@ -38,7 +35,7 @@
             "sourceMap": true,
             "optimization": false,
             "namedChunks": true,
-            "browser": "projects/demo/src/main.ts"
+            "main": "projects/demo/src/main.ts"
           },
           "configurations": {
             "production": {
@@ -56,13 +53,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "4mb"
+                  "maximumWarning": "3.5mb",
+                  "maximumError": "4.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kb",
-                  "maximumError": "9kb"
+                  "maximumWarning": "9kb",
+                  "maximumError": "12kb"
                 }
               ]
             }
@@ -70,7 +67,7 @@
           "defaultConfiguration": ""
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "clr-demo:build"
           },
@@ -158,17 +155,13 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-esbuild:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": {
-              "base": "dist/website",
-              "browser": ""
-            },
+            "outputPath": "dist/website",
             "index": "projects/website/src/index.html",
-            "browser": "projects/website/src/main.ts",
+            "main": "projects/website/src/main.ts",
             "tsConfig": "projects/website/tsconfig.app.json",
             "allowedCommonJsDependencies": ["prismjs"],
-            "plugins": ["./projects/website/plugins/raw-loader.plugin.mjs"],
             "assets": [
               "projects/website/src/favicon.ico",
               "projects/website/src/manifest.json",
@@ -213,7 +206,7 @@
           "defaultConfiguration": ""
         },
         "serve": {
-          "builder": "@angular-builders/custom-esbuild:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "clr-website:build"
           },

@@ -15,7 +15,6 @@ import { DocTabsComponent } from '../../../shared/doc-tabs/doc-tabs.component';
 import { LinkCardsComponent, LinkCardsLink } from '../../../shared/link-cards/link-cards.component';
 import { ComponentList, NestingTableComponent } from '../../../shared/nesting-table/nesting-table.component';
 import { StackblitzExampleComponent } from '../../../shared/stackblitz-example/stackblitz-example.component';
-import { ThemedImageComponent } from '../../../shared/themed-image/themed-image.component';
 import { ClarityDocComponent } from '../clarity-doc';
 import { formsPatternLink } from '../pattern-links';
 
@@ -53,7 +52,6 @@ export class ExampleComponent {
     LinkCardsComponent,
     ClrPasswordModule,
     ClrCommonFormsModule,
-    ThemedImageComponent,
     RouterLink,
     FormsModule,
     StackblitzExampleComponent,

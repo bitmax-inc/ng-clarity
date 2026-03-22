@@ -9,8 +9,6 @@ import { Component, ViewChild } from '@angular/core';
 import {
   ClrDropdown,
   ClrDropdownModule,
-  ClrIcon,
-  ClrIfOpen,
   ClrPopoverContent,
   ClrPopoverHostDirective,
   ClrStopEscapePropagationDirective,
@@ -81,8 +79,6 @@ export class ExampleComponent {
     ClrStopEscapePropagationDirective,
     ClrPopoverHostDirective,
     ClrDropdownModule,
-    ClrIcon,
-    ClrIfOpen,
     ClrPopoverContent,
     StackblitzExampleComponent,
   ],

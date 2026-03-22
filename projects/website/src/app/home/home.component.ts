@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 import { environment } from '../../environments/environment';
 import { SiteFooterComponent } from '../shared/site-footer/site-footer.component';
 import { SiteNavComponent } from '../shared/site-nav/site-nav.component';
-import { ThemeToggleComponent } from '../shared/theme-toggle/theme-toggle.component';
 import { ThemedImageComponent } from '../shared/themed-image/themed-image.component';
 
 @Component({
@@ -21,7 +20,7 @@ import { ThemedImageComponent } from '../shared/themed-image/themed-image.compon
   host: {
     '[class.content-container]': 'true',
   },
-  imports: [RouterModule, SiteNavComponent, SiteFooterComponent, ThemeToggleComponent, ThemedImageComponent],
+  imports: [RouterModule, SiteNavComponent, SiteFooterComponent, ThemedImageComponent],
 })
 export class HomeComponent implements OnInit, OnDestroy {
   // currentSeason = `bg-img-${this.getCurrentSeason()}`;

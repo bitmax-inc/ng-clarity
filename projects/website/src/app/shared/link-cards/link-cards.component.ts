@@ -9,8 +9,6 @@ import { Component, Input, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { arrowIcon, ClarityIcons, ClrIcon } from '@clr/angular';
 
-import { ThemedImageComponent } from '../themed-image/themed-image.component';
-
 export interface LinkCardsLink {
   routerLink: string;
   text: string;
@@ -22,7 +20,7 @@ export interface LinkCardsLink {
   selector: 'app-link-cards',
   templateUrl: './link-cards.component.html',
   styleUrl: './link-cards.component.scss',
-  imports: [RouterModule, ClrIcon, ThemedImageComponent],
+  imports: [RouterModule, ClrIcon],
 })
 export class LinkCardsComponent {
   @Input({ required: true }) links: LinkCardsLink[] | undefined;

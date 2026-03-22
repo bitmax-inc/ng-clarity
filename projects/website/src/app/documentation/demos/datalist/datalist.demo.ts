@@ -8,7 +8,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgModel } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { ClrCommonFormsModule, ClrDatalistModule, ClrIcon, ClrIconModule, ClrSelectModule } from '@clr/angular';
+import { ClrCommonFormsModule, ClrDatalistModule, ClrIconModule, ClrSelectModule } from '@clr/angular';
 
 import { DatalistBasicDemo } from './datalist-basic.demo';
 import { DatalistReactiveValidationDemo } from './datalist-reactive-validation.demo';
@@ -36,7 +36,6 @@ import { formsPatternLink } from '../pattern-links';
     ClrCommonFormsModule,
     ClrDatalistModule,
     ThemedImageComponent,
-    ClrIcon,
     ClrIconModule,
     LinkCardsComponent,
     RouterLink,

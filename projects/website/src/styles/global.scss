@@ -5,6 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
+@use 'sass:map';
 @use 'variables.tokens' as tokens;
 @use 'variables/variables.layout' as variables;
 
@@ -128,7 +129,7 @@ a.btn-primary {
 // Global Pages
 .layout-home {
   .main-container {
-    @media screen and (max-width: map-get(variables.$clr-grid-breakpoints, sm)) {
+    @media screen and (max-width: map.get(variables.$clr-grid-breakpoints, sm)) {
       height: auto;
     }
 

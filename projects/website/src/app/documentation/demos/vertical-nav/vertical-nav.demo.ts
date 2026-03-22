@@ -31,7 +31,6 @@ import { CollapsibleVerticalNavDemo } from './collapsible-nav/collapsible-nav';
 import { VerticalNavIconsDemo } from './icons/icons';
 import { JustNavsDemo } from './just-navs/just-navs';
 import { NavGroupsDemo } from './nav-groups/nav-groups';
-import { ProjectPokemonDemo } from './routes/project-pokemon/project-pokemon';
 import { DoDontComponent } from '../../../shared/do-dont/do-dont.component';
 import { DocTabComponent } from '../../../shared/doc-tabs/doc-tab.component';
 import { DocTabsComponent } from '../../../shared/doc-tabs/doc-tabs.component';
@@ -66,7 +65,6 @@ type DemoRoute = Route & { data: { demoName: string } };
     ClrIcon,
     ClrIconModule,
     StyleDocsComponent,
-    ProjectPokemonDemo,
   ],
 })
 export class VerticalNavDemo extends ClarityDocComponent implements OnInit, OnDestroy {
