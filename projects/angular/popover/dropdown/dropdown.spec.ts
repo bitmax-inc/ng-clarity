@@ -9,10 +9,10 @@ import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/co
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ClrModalModule } from '@clr/angular/modal';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { delay, expectActiveElementToBe } from '@clr/angular/testing';
-import { FocusableItem, FocusService } from '@clr/angular/utils';
+import { ClrModalModule } from '@bitmax/clr-angular/modal';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { delay, expectActiveElementToBe } from '@bitmax/clr-angular/testing';
+import { FocusableItem, FocusService } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { ClrDropdown } from './dropdown';

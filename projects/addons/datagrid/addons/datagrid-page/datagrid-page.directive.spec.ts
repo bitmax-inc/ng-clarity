@@ -16,8 +16,8 @@ import {
   MockDatagridCellContainerComponent,
   MockDatagridColumnToggleComponent,
   MockIsRowSelectablePipe,
-} from '@clr/addons/testing';
-import { SelectionType } from '@clr/angular/data/datagrid';
+} from '@bitmax/clr-addons/testing';
+import { SelectionType } from '@bitmax/clr-angular/data/datagrid';
 
 import { DatagridPageDirective } from './datagrid-page.directive';
 import { DatagridComponent } from '../../datagrid.component';

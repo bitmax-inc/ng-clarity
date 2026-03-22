@@ -21,7 +21,7 @@ import {
   SimpleChanges,
   ViewChildren,
 } from '@angular/core';
-import { ElementResizeService } from '@clr/addons/a11y';
+import { ElementResizeService } from '@bitmax/clr-addons/a11y';
 import { BehaviorSubject, interval, Subscription } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 

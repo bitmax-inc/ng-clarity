@@ -7,8 +7,8 @@
 
 import { isPlatformBrowser } from '@angular/common';
 import { Inject, Injectable, PLATFORM_ID, Renderer2, RendererFactory2 } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { ArrowKeyDirection, customFocusableItemProvider, Keys } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { ArrowKeyDirection, customFocusableItemProvider, Keys } from '@bitmax/clr-angular/utils';
 import { take } from 'rxjs/operators';
 
 import { OptionSelectionService } from './option-selection.service';

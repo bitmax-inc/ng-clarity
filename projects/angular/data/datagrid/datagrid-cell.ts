@@ -6,8 +6,8 @@
  */
 
 import { Component, ContentChildren, Injector, OnInit, QueryList, ViewContainerRef } from '@angular/core';
-import { ClrSignpost } from '@clr/angular/popover/signpost';
-import { HostWrapper } from '@clr/angular/utils';
+import { ClrSignpost } from '@bitmax/clr-angular/popover/signpost';
+import { HostWrapper } from '@bitmax/clr-angular/utils';
 
 import { WrappedCell } from './wrapped-cell';
 

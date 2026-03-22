@@ -6,8 +6,8 @@
  */
 
 import { Component } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { delay, TestContext } from '@clr/angular/testing';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { delay, TestContext } from '@bitmax/clr-angular/testing';
 
 import { ClrCombobox } from './combobox';
 

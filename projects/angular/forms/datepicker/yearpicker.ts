@@ -6,7 +6,7 @@
  */
 
 import { AfterViewInit, Component, ElementRef, HostListener } from '@angular/core';
-import { ClrCommonStringsService, Keys } from '@clr/angular/utils';
+import { ClrCommonStringsService, Keys } from '@bitmax/clr-angular/utils';
 
 import { YearRangeModel } from './model/year-range.model';
 import { DateNavigationService } from './providers/date-navigation.service';

@@ -21,13 +21,13 @@ import {
   ClrPopoverService,
   ClrPopoverType,
   DROPDOWN_POSITIONS,
-} from '@clr/angular/popover/common';
+} from '@bitmax/clr-angular/popover/common';
 import {
   ClrCommonStringsService,
   ClrDestroyService,
   FOCUS_SERVICE_PROVIDER,
   uniqueIdFactory,
-} from '@clr/angular/utils';
+} from '@bitmax/clr-angular/utils';
 import { takeUntil } from 'rxjs/operators';
 
 import { ClrButton } from './button';

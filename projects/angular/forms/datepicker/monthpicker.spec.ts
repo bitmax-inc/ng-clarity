@@ -6,9 +6,9 @@
  */
 
 import { Component } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { TestContext } from '@clr/angular/testing';
-import { Keys } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { TestContext } from '@bitmax/clr-angular/testing';
+import { Keys } from '@bitmax/clr-angular/utils';
 
 import { DayModel } from './model/day.model';
 import { ClrMonthpicker } from './monthpicker';

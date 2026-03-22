@@ -145,7 +145,7 @@ import {
   PropertyFilter,
   StringPropertyDefinition,
   Unit,
-} from '@clr/addons/datagrid-filters';
+} from '@bitmax/clr-addons/datagrid-filters';
 
 @Component({
   templateUrl: 'datagrid-filters-demo.component.html',

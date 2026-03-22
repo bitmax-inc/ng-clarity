@@ -17,9 +17,9 @@ import {
   successStandardIcon,
   warningStandardIcon,
   windowCloseIcon,
-} from '@clr/angular/icon';
-import { ClrDropdownModule } from '@clr/angular/popover/dropdown';
-import { ClrSpinnerModule } from '@clr/angular/progress/spinner';
+} from '@bitmax/clr-angular/icon';
+import { ClrDropdownModule } from '@bitmax/clr-angular/popover/dropdown';
+import { ClrSpinnerModule } from '@bitmax/clr-angular/progress/spinner';
 
 import { ClrAlert } from './alert';
 import { ClrAlertItem } from './alert-item';

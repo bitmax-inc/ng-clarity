@@ -6,7 +6,7 @@
  */
 
 import { ElementRef, Injectable } from '@angular/core';
-import { DomAdapter } from '@clr/angular/utils';
+import { DomAdapter } from '@bitmax/clr-angular/utils';
 
 import { DatagridRenderOrganizer } from '../render/render-organizer';
 

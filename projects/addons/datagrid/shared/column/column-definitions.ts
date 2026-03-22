@@ -10,7 +10,7 @@ import {
   ClrDatagridComparatorInterface,
   ClrDatagridSortOrder,
   ClrDatagridStringFilterInterface,
-} from '@clr/angular/data/datagrid';
+} from '@bitmax/clr-angular/data/datagrid';
 
 import { ColumnFilter } from '../../interfaces/column-filter';
 

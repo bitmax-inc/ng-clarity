@@ -11,8 +11,8 @@ import { Component, ViewChild } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { GridHelper } from '@clr/addons/testing';
-import { ClrDatagridModule } from '@clr/angular/data/datagrid';
+import { GridHelper } from '@bitmax/clr-addons/testing';
+import { ClrDatagridModule } from '@bitmax/clr-angular/data/datagrid';
 
 import { DatagridColumnsOrderDirective } from './datagrid-columns-order.directive';
 import { DatagridColumnsOrderModule } from './datagrid-columns-order.module';

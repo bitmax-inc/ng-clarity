@@ -6,7 +6,7 @@
  */
 
 import { Directive, Input } from '@angular/core';
-import { HeadingLevel } from '@clr/angular/utils';
+import { HeadingLevel } from '@bitmax/clr-angular/utils';
 
 @Directive({
   selector: 'clr-wizard-title',

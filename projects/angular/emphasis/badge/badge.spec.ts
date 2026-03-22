@@ -7,7 +7,7 @@
 
 import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Type } from '@clr/angular/emphasis/common';
+import { Type } from '@bitmax/clr-angular/emphasis/common';
 
 import { ClrBadge, ClrBadgeColors } from './badge';
 

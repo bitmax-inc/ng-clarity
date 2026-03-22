@@ -9,8 +9,8 @@ import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { FormControl, FormGroup, FormsModule, NgControl, Validators } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-import { ClrCommonFormsModule, LayoutService, NgControlService } from '@clr/angular/forms/common';
-import { ClrIcon } from '@clr/angular/icon';
+import { ClrCommonFormsModule, LayoutService, NgControlService } from '@bitmax/clr-angular/forms/common';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
 
 import { ClrPassword } from './password';
 import { ClrPasswordContainer } from './password-container';

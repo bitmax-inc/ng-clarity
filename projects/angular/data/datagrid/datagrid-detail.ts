@@ -6,7 +6,7 @@
  */
 
 import { Component, ContentChild, Input } from '@angular/core';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 
 import { ClrDatagridDetailHeader } from './datagrid-detail-header';
 import { DetailService } from './providers/detail.service';

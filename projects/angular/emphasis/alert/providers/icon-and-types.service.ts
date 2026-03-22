@@ -6,7 +6,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 
 import { AlertInfoObject } from '../utils/alert-info-object';
 import { ALERT_TYPES } from '../utils/alert-types';

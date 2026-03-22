@@ -19,7 +19,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { AbstractControl, FormGroupDirective, NgForm } from '@angular/forms';
-import { CollapsiblePanelService } from '@clr/angular/collapsible-panel';
+import { CollapsiblePanelService } from '@bitmax/clr-angular/collapsible-panel';
 import { Observable, Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 

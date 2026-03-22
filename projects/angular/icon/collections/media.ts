@@ -61,7 +61,7 @@ export const mediaCollectionAliases: IconAlias[] = [];
  * Function that can be called to load the core icon set.
  *
  * ```typescript
- * import { loadMediaIconSet } from '@clr/angular';
+ * import { loadMediaIconSet } from '@bitmax/clr-angular';
  *
  * loadMediaIconSet();
  * ```
@@ -72,7 +72,7 @@ export function loadMediaIconSet() {
   ClarityIcons.addAliases(...mediaCollectionAliases);
 }
 
-// declare module '@clr/angular' {
+// declare module '@bitmax/clr-angular' {
 //   interface IconRegistrySources {
 //     [cameraIconName]: string;
 //     [fastForwardIconName]: string;

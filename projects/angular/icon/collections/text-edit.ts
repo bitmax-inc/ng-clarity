@@ -73,7 +73,7 @@ export const textEditCollectionAliases: IconAlias[] = [];
  * Function that can be called to load the core icon set.
  *
  * ```typescript
- * import { loadTextEditIconSet } from '@clr/angular';
+ * import { loadTextEditIconSet } from '@bitmax/clr-angular';
  *
  * loadTextEditIconSet();
  * ```
@@ -84,7 +84,7 @@ export function loadTextEditIconSet() {
   ClarityIcons.addAliases(...textEditCollectionAliases);
 }
 
-// declare module '@clr/angular' {
+// declare module '@bitmax/clr-angular' {
 //   interface IconRegistrySources {
 //     [alignBottomIconName]: string;
 //     [alignCenterIconName]: string;

@@ -20,7 +20,7 @@ import {
   QueryList,
   Renderer2,
 } from '@angular/core';
-import { DomAdapter } from '@clr/angular/utils';
+import { DomAdapter } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { ClrDatagrid } from '../datagrid';
@@ -39,7 +39,7 @@ import { TableSizeService } from '../providers/table-size.service';
 import { KeyNavigationGridController } from '../utils/key-navigation-grid.controller';
 
 // Fixes build error
-// @dynamic (https://github.com/angular/angular/issues/19698#issuecomment-338340211)
+// @dynamic (https://github.com/clr-angular/clr-angular/issues/19698#issuecomment-338340211)
 export const domAdapterFactory = (platformId: any) => {
   if (isPlatformBrowser(platformId)) {
     return new DomAdapter();
@@ -49,7 +49,7 @@ export const domAdapterFactory = (platformId: any) => {
 };
 
 // Fixes build error
-// @dynamic (https://github.com/angular/angular/issues/19698#issuecomment-338340211)
+// @dynamic (https://github.com/clr-angular/clr-angular/issues/19698#issuecomment-338340211)
 @Directive({
   selector: 'clr-datagrid',
   providers: [{ provide: DomAdapter, useFactory: domAdapterFactory, deps: [PLATFORM_ID] }],

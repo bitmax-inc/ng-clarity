@@ -31,7 +31,7 @@ import {
   TemplateRef,
   ViewContainerRef,
 } from '@angular/core';
-import { Keys } from '@clr/angular/utils';
+import { Keys } from '@bitmax/clr-angular/utils';
 import { fromEvent, merge, Subscription, switchMap, timer } from 'rxjs';
 
 import { ClrPopoverService } from './providers/popover.service';

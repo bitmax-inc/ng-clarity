@@ -16,8 +16,8 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { ClrPopoverPosition, ClrPopoverService, ClrPopoverType } from '@clr/angular/popover/common';
-import { ClrCommonStringsService, uniqueIdFactory } from '@clr/angular/utils';
+import { ClrPopoverPosition, ClrPopoverService, ClrPopoverType } from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService, uniqueIdFactory } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { ClrDatagridFilterInterface } from './interfaces/filter.interface';

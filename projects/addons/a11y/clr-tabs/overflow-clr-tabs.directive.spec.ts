@@ -8,7 +8,7 @@
 import { Component, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ClrTab, ClrTabLink, ClrTabs, ClrTabsModule } from '@clr/angular/layout/tabs';
+import { ClrTab, ClrTabLink, ClrTabs, ClrTabsModule } from '@bitmax/clr-angular/layout/tabs';
 import { Observable, Subject } from 'rxjs';
 
 import { AppfxA11yModule } from '../a11y.module';

@@ -15,9 +15,9 @@
     "@angular/platform-browser": "PLACEHOLDER",
     "@angular/platform-browser-dynamic": "PLACEHOLDER",
     "@angular/router": "PLACEHOLDER",
-    "@clr/angular": "CLARITY_VERSION_PLACEHOLDER",
-    "@clr/ui": "CLARITY_VERSION_PLACEHOLDER",
-    "@clr/addons": "CLARITY_VERSION_PLACEHOLDER",
+    "@bitmax/clr-angular": "CLARITY_VERSION_PLACEHOLDER",
+    "@bitmax/clr-ui": "CLARITY_VERSION_PLACEHOLDER",
+    "@bitmax/clr-addons": "CLARITY_VERSION_PLACEHOLDER",
     "rxjs": "PLACEHOLDER",
     "tslib": "PLACEHOLDER",
     "zone.js": "PLACEHOLDER"

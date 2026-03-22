@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { assertEqualDates } from '@clr/angular/testing';
+import { assertEqualDates } from '@bitmax/clr-angular/testing';
 
 import { DayModel } from './day.model';
 

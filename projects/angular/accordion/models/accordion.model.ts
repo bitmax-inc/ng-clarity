@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { CollapsiblePanelGroupModel } from '@clr/angular/collapsible-panel';
+import { CollapsiblePanelGroupModel } from '@bitmax/clr-angular/collapsible-panel';
 
 import { AccordionStrategy } from '../enums/accordion-strategy.enum';
 

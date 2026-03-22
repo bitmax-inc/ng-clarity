@@ -8,9 +8,9 @@
 import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { FormControl, FormsModule, Validators } from '@angular/forms';
-import { ClrInput, ClrInputContainer } from '@clr/angular/forms/input';
-import { ClrIcon } from '@clr/angular/icon';
-import { delay } from '@clr/angular/testing';
+import { ClrInput, ClrInputContainer } from '@bitmax/clr-angular/forms/input';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { delay } from '@bitmax/clr-angular/testing';
 
 import { ClrIfError } from './if-error';
 import { ClrControlError } from '../control-subtexts/error';

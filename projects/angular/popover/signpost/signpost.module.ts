@@ -7,9 +7,9 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
-import { ClarityIcons, ClrIcon, infoCircleIcon, windowCloseIcon } from '@clr/angular/icon';
-import { ClrIfOpen, ÇlrClrPopoverModuleNext } from '@clr/angular/popover/common';
-import { ClrFocusOnViewInitModule } from '@clr/angular/utils';
+import { ClarityIcons, ClrIcon, infoCircleIcon, windowCloseIcon } from '@bitmax/clr-angular/icon';
+import { ClrIfOpen, ÇlrClrPopoverModuleNext } from '@bitmax/clr-angular/popover/common';
+import { ClrFocusOnViewInitModule } from '@bitmax/clr-angular/utils';
 
 import { ClrSignpost } from './signpost';
 import { ClrSignpostContent } from './signpost-content';

@@ -17,8 +17,8 @@ import {
   ViewContainerRef,
 } from '@angular/core';
 import { NgControl } from '@angular/forms';
-import { WrappedFormControl } from '@clr/angular/forms/common';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { WrappedFormControl } from '@bitmax/clr-angular/forms/common';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 
 import { ClrFileInputContainer } from './file-input-container';
 

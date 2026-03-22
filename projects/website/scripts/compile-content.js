@@ -126,7 +126,7 @@ async function compileStackBlitzExampleTemplate() {
   const repoDeps = { ...repoPackageManifest.dependencies, ...repoPackageManifest.devDependencies };
   const templatePackageManifest = JSON.parse(files['package.json']);
 
-  const clarityPackages = ['@clr/angular', '@clr/ui', '@clr/addons'];
+  const clarityPackages = ['@bitmax/clr-angular', '@bitmax/clr-ui', '@bitmax/clr-addons'];
 
   for (const dependency of Object.keys(templatePackageManifest.dependencies || {})) {
     if (clarityPackages.includes(dependency)) {
@@ -207,8 +207,8 @@ function addCssClassWarning(document) {
         <div class="alert-items">
           <div class="alert-item">
             <span class="alert-text">
-              The list of classes below is included for users of <code cds-text="code">@clr/ui</code> without using
-              <code cds-text="code">@clr/angular</code>. Using these classes in your Angular components to override
+              The list of classes below is included for users of <code cds-text="code">@bitmax/clr-ui</code> without using
+              <code cds-text="code">@bitmax/clr-angular</code>. Using these classes in your Angular components to override
               internal component styling is not supported. It should only be done in cases where you're prepared to
               deal with changes and conflicts in minor or patch releases.
             </span>

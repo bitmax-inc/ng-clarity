@@ -17,8 +17,8 @@ import {
   QueryList,
   SimpleChanges,
 } from '@angular/core';
-import { CollapsiblePanel, CollapsiblePanelModel } from '@clr/angular/collapsible-panel';
-import { HeadingLevel, IfExpandService } from '@clr/angular/utils';
+import { CollapsiblePanel, CollapsiblePanelModel } from '@bitmax/clr-angular/collapsible-panel';
+import { HeadingLevel, IfExpandService } from '@bitmax/clr-angular/utils';
 
 import { ClrAccordionDescription } from './accordion-description';
 

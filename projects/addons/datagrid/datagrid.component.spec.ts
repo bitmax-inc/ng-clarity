@@ -14,9 +14,9 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ZoomLevelService } from '@clr/addons/a11y';
-import { DatagridFiltersStrings, FilterMode, PropertyFilter } from '@clr/addons/datagrid-filters';
-import { DragAndDropGroupService } from '@clr/addons/drag-and-drop';
+import { ZoomLevelService } from '@bitmax/clr-addons/a11y';
+import { DatagridFiltersStrings, FilterMode, PropertyFilter } from '@bitmax/clr-addons/datagrid-filters';
+import { DragAndDropGroupService } from '@bitmax/clr-addons/drag-and-drop';
 import {
   FilterInputTestHelper,
   GridHelper,
@@ -26,7 +26,7 @@ import {
   MockDatagridPreserveSelectionDirective,
   MockIsRowSelectablePipe,
   ZoomLevelServiceMock,
-} from '@clr/addons/testing';
+} from '@bitmax/clr-addons/testing';
 import {
   ClrDatagridComparatorInterface,
   ClrDatagridFilterInterface,
@@ -35,9 +35,9 @@ import {
   ClrDatagridStringFilterInterface,
   ClrDatagridVirtualScrollRangeInterface,
   SelectionType,
-} from '@clr/angular/data/datagrid';
-import { ClrCheckboxModule, ClrInputModule, ClrSelectModule } from '@clr/angular/forms';
-import { ClrIcon } from '@clr/angular/icon';
+} from '@bitmax/clr-angular/data/datagrid';
+import { ClrCheckboxModule, ClrInputModule, ClrSelectModule } from '@bitmax/clr-angular/forms';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
 import { Observable, Subject } from 'rxjs';
 
 import { DatagridColumnsOrderModule } from './addons/column-ordering/datagrid-columns-order.module';

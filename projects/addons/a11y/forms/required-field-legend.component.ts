@@ -6,7 +6,7 @@
  */
 
 import { Component } from '@angular/core';
-import { AppfxTranslateService, appfxTranslationsToken } from '@clr/addons/translate';
+import { AppfxTranslateService, appfxTranslationsToken } from '@bitmax/clr-addons/translate';
 
 import { translations } from './required-field-legend.l10n';
 

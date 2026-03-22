@@ -6,22 +6,22 @@
  */
 
 import { NgModule } from '@angular/core';
-import { ClrAccordionModule } from '@clr/angular/accordion';
-import { ClrButtonModule } from '@clr/angular/button';
-import { ClrDataModule } from '@clr/angular/data';
-import { ClrEmphasisModule } from '@clr/angular/emphasis';
-import { ClrFormsModule } from '@clr/angular/forms';
-import { ClrIcon, ClrIconModule } from '@clr/angular/icon';
-import { ClrLayoutModule } from '@clr/angular/layout';
-import { ClrModalModule, ClrSidePanelModule } from '@clr/angular/modal';
-import { ClrPopoverModule } from '@clr/angular/popover';
-import { ÇlrClrPopoverModuleNext } from '@clr/angular/popover/common';
-import { ClrProgressBarModule } from '@clr/angular/progress/progress-bars';
-import { ClrSpinnerModule } from '@clr/angular/progress/spinner';
-import { ClrStepperModule } from '@clr/angular/stepper';
-import { ClrTimelineModule } from '@clr/angular/timeline';
-import { ClrConditionalModule, ClrFocusOnViewInitModule, ClrLoadingModule } from '@clr/angular/utils';
-import { ClrWizardModule } from '@clr/angular/wizard';
+import { ClrAccordionModule } from '@bitmax/clr-angular/accordion';
+import { ClrButtonModule } from '@bitmax/clr-angular/button';
+import { ClrDataModule } from '@bitmax/clr-angular/data';
+import { ClrEmphasisModule } from '@bitmax/clr-angular/emphasis';
+import { ClrFormsModule } from '@bitmax/clr-angular/forms';
+import { ClrIcon, ClrIconModule } from '@bitmax/clr-angular/icon';
+import { ClrLayoutModule } from '@bitmax/clr-angular/layout';
+import { ClrModalModule, ClrSidePanelModule } from '@bitmax/clr-angular/modal';
+import { ClrPopoverModule } from '@bitmax/clr-angular/popover';
+import { ÇlrClrPopoverModuleNext } from '@bitmax/clr-angular/popover/common';
+import { ClrProgressBarModule } from '@bitmax/clr-angular/progress/progress-bars';
+import { ClrSpinnerModule } from '@bitmax/clr-angular/progress/spinner';
+import { ClrStepperModule } from '@bitmax/clr-angular/stepper';
+import { ClrTimelineModule } from '@bitmax/clr-angular/timeline';
+import { ClrConditionalModule, ClrFocusOnViewInitModule, ClrLoadingModule } from '@bitmax/clr-angular/utils';
+import { ClrWizardModule } from '@bitmax/clr-angular/wizard';
 
 @NgModule({
   imports: [ClrIcon],

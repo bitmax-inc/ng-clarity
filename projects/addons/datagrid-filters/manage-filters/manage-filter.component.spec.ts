@@ -8,9 +8,9 @@
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ClrInputModule, ClrRadioModule, ClrSelectModule } from '@clr/angular/forms';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrSignpostModule } from '@clr/angular/popover/signpost';
+import { ClrInputModule, ClrRadioModule, ClrSelectModule } from '@bitmax/clr-angular/forms';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrSignpostModule } from '@bitmax/clr-angular/popover/signpost';
 
 import { DismissableDirective } from './dismissable.directive';
 import { ManageFilterComponent } from './manage-filter.component';

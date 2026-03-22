@@ -18,6 +18,11 @@
     "target": "es2022",
     "useDefineForClassFields": false,
     "paths": {
+      "@bitmax/clr-angular": ["projects/angular/index.ts"],
+      "@bitmax/clr-angular/*": ["projects/angular/*"],
+      "@bitmax/clr-addons": ["projects/addons/index.ts"],
+      "@bitmax/clr-addons/*": ["projects/addons/*"],
+      "@bitmax/clr-angular/testing": ["projects/angular/utils/testing"],
       "@clr/angular": ["projects/angular/index.ts"],
       "@clr/angular/*": ["projects/angular/*"],
       "@clr/addons": ["projects/addons/index.ts"],

@@ -6,7 +6,7 @@
  */
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ActionDefinition } from '@clr/addons/datagrid';
+import { ActionDefinition } from '@bitmax/clr-addons/datagrid';
 
 @Component({
   selector: 'appfx-datagrid-action-bar',

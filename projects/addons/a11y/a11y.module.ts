@@ -6,7 +6,7 @@
  */
 
 import { NgModule } from '@angular/core';
-import { AppfxTranslateModule } from '@clr/addons/translate';
+import { AppfxTranslateModule } from '@bitmax/clr-addons/translate';
 
 import { OverrideClrStringsDirective } from './clr-stepper-panel/override-clr-strings.directive';
 import { OverflowClrTabsDirective } from './clr-tabs/overflow-clr-tabs.directive';

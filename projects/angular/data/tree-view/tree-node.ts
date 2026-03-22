@@ -33,7 +33,7 @@ import {
   LoadingListener,
   preventArrowKeyScroll,
   uniqueIdFactory,
-} from '@clr/angular/utils';
+} from '@bitmax/clr-angular/utils';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime, filter } from 'rxjs/operators';
 
@@ -99,7 +99,7 @@ export class ClrTreeNode<T> implements OnInit, AfterContentInit, AfterViewInit, 
   ) {
     if (featuresService.recursion) {
       // I'm completely stuck, we have to hack into private properties until either
-      // https://github.com/angular/angular/issues/14935 or https://github.com/angular/angular/issues/15998
+      // https://github.com/clr-angular/clr-angular/issues/14935 or https://github.com/clr-angular/clr-angular/issues/15998
       // are fixed
       // This is for non-ivy implementations
       if ((injector as any).view) {

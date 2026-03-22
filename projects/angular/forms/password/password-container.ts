@@ -13,8 +13,8 @@ import {
   FormsFocusService,
   LayoutService,
   NgControlService,
-} from '@clr/angular/forms/common';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+} from '@bitmax/clr-angular/forms/common';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 import { BehaviorSubject } from 'rxjs';
 
 export const TOGGLE_SERVICE = new InjectionToken<BehaviorSubject<boolean>>(undefined);

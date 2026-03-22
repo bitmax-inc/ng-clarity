@@ -6,7 +6,7 @@
  */
 
 import { Component, ContentChild, forwardRef, Inject, InjectionToken, OnDestroy, OnInit } from '@angular/core';
-import { ClrControlLabel, ControlIdService } from '@clr/angular/forms/common';
+import { ClrControlLabel, ControlIdService } from '@bitmax/clr-angular/forms/common';
 import { BehaviorSubject, Subscription } from 'rxjs';
 
 import { ClrCheckbox } from './checkbox';

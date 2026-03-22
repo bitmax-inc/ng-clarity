@@ -7,7 +7,7 @@
 
 import { IterableDiffers } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { delay } from '@clr/angular/testing';
+import { delay } from '@bitmax/clr-angular/testing';
 import { Subject } from 'rxjs';
 
 import { FiltersProvider } from './filters';

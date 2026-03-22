@@ -41,7 +41,7 @@ export const miniCollectionAliases: IconAlias[] = [
 /**
  * Function that can be called to load the mini icon set.
  *
- * ```typescript@clr/angular';
+ * ```typescript@bitmax/clr-angular';
  *
  * loadMiniIconSet();
  * ```
@@ -52,7 +52,7 @@ export function loadMiniIconSet() {
   ClarityIcons.addAliases(...miniCollectionAliases);
 }
 
-// declare module '@clr/angular' {
+// declare module '@bitmax/clr-angular' {
 //   interface IconRegistrySources {
 //     [arrowMiniIconName]: string;
 //     [calendarMiniIconName]: string;

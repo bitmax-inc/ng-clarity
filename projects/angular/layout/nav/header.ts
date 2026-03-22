@@ -6,7 +6,7 @@
  */
 
 import { Component, HostBinding, Input, OnDestroy } from '@angular/core';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
@@ -121,7 +121,7 @@ export class ClrHeader implements OnDestroy {
   }
 
   /**
-   * @deprecated Will be removed in with @clr/angular v15.0.0
+   * @deprecated Will be removed in with @bitmax/clr-angular v15.0.0
    *
    * Use `openNav(navLevel)` instead to open the navigation and ResponsiveNavService to close it.
    */

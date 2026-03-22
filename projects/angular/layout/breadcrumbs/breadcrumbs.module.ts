@@ -8,8 +8,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrHostWrappingModule } from '@clr/angular/utils';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrHostWrappingModule } from '@bitmax/clr-angular/utils';
 
 import { ClrBreadcrumbItem } from './breadcrumb-item';
 import { ClrBreadcrumbs } from './breadcrumbs';

@@ -8,8 +8,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ClrCommonFormsModule } from '@clr/angular/forms/common';
-import { ClarityIcons, ClrIcon, errorStandardIcon, eyeHideIcon, eyeIcon, successStandardIcon } from '@clr/angular/icon';
+import { ClrCommonFormsModule } from '@bitmax/clr-angular/forms/common';
+import { ClarityIcons, ClrIcon, errorStandardIcon, eyeHideIcon, eyeIcon, successStandardIcon } from '@bitmax/clr-angular/icon';
 
 import { ClrPassword } from './password';
 import { ClrPasswordContainer } from './password-container';

@@ -31,19 +31,19 @@ If you just want to use our HTML/CSS implementations, use the following instruct
 ### Step 1. Install the Clarity Package from npm:
 
 ```bash
-npm install @clr/ui @cds/core --save
+npm install @bitmax/clr-ui @cds/core --save
 ```
 
 ### Step 2: Include the Clarity and Core Styles
 
-Include `@cds/core/global.min.css`, `@cds/core/styles/theme.dark.min.css`, and `@clr/ui/clr-ui.min.css`
+Include `@cds/core/global.min.css`, `@cds/core/styles/theme.dark.min.css`, and `@bitmax/clr-ui/clr-ui.min.css`
 in your app's stylesheet. You will need to ensure your build process is configured to bundle CSS from
 npm packages.
 
 ```css
 @import '@cds/core/global.min.css';
 @import '@cds/core/styles/theme.dark.min.css';
-@import '@clr/ui/clr-ui.min.css';
+@import '@bitmax/clr-ui/clr-ui.min.css';
 ```
 
 Alternatively, you can load the theme files using the `npm unpkg` content delivery network (CDN). See
@@ -53,11 +53,11 @@ Alternatively, you can load the theme files using the `npm unpkg` content delive
 <!-- Load the latest version -->
 <link rel="stylesheet" href="https://unpkg.com/@cds/core/global.min.css" />
 <link rel="stylesheet" href="https://unpkg.com/@cds/core/styles/theme.dark.min.css" />
-<link rel="stylesheet" href="https://unpkg.com/@clr/ui/clr-ui.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/@bitmax/clr-ui/clr-ui.min.css" />
 <!-- Or load a specific version, recommended -->
 <link rel="stylesheet" href="https://unpkg.com/@cds/core@6.9.2/global.min.css" />
 <link rel="stylesheet" href="https://unpkg.com/@cds/core@6.9.2/styles/theme.dark.min.css" />
-<link rel="stylesheet" href="https://unpkg.com/@clr/ui@17.0.0/clr-ui.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/@bitmax/clr-ui@17.0.0/clr-ui.min.css" />
 ```
 
 ### Step 3: Set the Theme
@@ -77,7 +77,7 @@ You can build an Angular app, then install Clarity onto your project.
 ### Step 1: Build an Angular App
 
 Create a new Angular application. If you need a quick start, go through the
-[Angular tutorial.](https://angular.io/docs/ts/latest/quickstart.html)
+[Angular tutorial.](https://clr-angular.io/docs/ts/latest/quickstart.html)
 
 ### Step 2: Install Clarity Packages
 
@@ -85,13 +85,13 @@ Clarity is published as three separate packages on npm. The names of these packa
 following list:
 
 - `@cds/core`: The library of web components, design tokens and foundational pieces also used in Angular components.
-- `@clr/ui`: Contains the static styles for building HTML components.
-- `@clr/angular`: Contains the Angular components. This package depends on @clr/ui for styles.
+- `@bitmax/clr-ui`: Contains the static styles for building HTML components.
+- `@bitmax/clr-angular`: Contains the Angular components. This package depends on @bitmax/clr-ui for styles.
 
 Install all the packages by running the following command with npm:
 
 ```bash
-npm install @cds/core @clr/angular @clr/ui --save
+npm install @cds/core @bitmax/clr-angular @bitmax/clr-ui --save
 ```
 
 ### Step 3: Include the Clarity Styles
@@ -103,7 +103,7 @@ angular.json file. For example:
 "styles": [
     "node_modules/@cds/core/global.min.css",
     "node_modules/@cds/core/styles/theme.dark.min.css",
-    "node_modules/@clr/ui/clr-ui.min.css"
+    "node_modules/@bitmax/clr-ui/clr-ui.min.css"
     ...any other styles
     ]
 ```
@@ -114,7 +114,7 @@ your index.html file:
 ```html
 <link rel="stylesheet" href="path/to/node_modules/@cds/core/global.min.css" />
 <link rel="stylesheet" href="path/to/node_modules/@cds/core/styles/theme.dark.min.css" />
-<link rel="stylesheet" href="path/to/node_modules/@clr/ui/clr-ui.min.css" />
+<link rel="stylesheet" href="path/to/node_modules/@bitmax/clr-ui/clr-ui.min.css" />
 ```
 
 ### Step 4: Set the Theme
@@ -136,7 +136,7 @@ deprecated the legacy animation engine APIs behind them. For example:
 ```typescript
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { ClarityModule } from "@clr/angular";
+import { ClarityModule } from "@bitmax/clr-angular";
 
 import { AppComponent } from "./app.component";
 
@@ -152,8 +152,8 @@ import { AppComponent } from "./app.component";
 export class AppModule { }
 ```
 
-If your application directly uses legacy helpers from `@clr/angular/utils/animations` or
-`@clr/angular/collapsible-panel`, those helpers still depend on `@angular/animations` and are
+If your application directly uses legacy helpers from `@bitmax/clr-angular/utils/animations` or
+`@bitmax/clr-angular/collapsible-panel`, those helpers still depend on `@angular/animations` and are
 deprecated. Prefer CSS transitions/keyframes or Angular's `animate.enter` / `animate.leave` APIs in
 new code.
 

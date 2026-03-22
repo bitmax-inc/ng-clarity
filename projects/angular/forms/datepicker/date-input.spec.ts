@@ -15,9 +15,9 @@ import {
   FormsFocusService,
   LayoutService,
   NgControlService,
-} from '@clr/angular/forms/common';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { delay, expectActiveElementNotToBe, expectActiveElementToBe, TestContext } from '@clr/angular/testing';
+} from '@bitmax/clr-angular/forms/common';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { delay, expectActiveElementNotToBe, expectActiveElementToBe, TestContext } from '@bitmax/clr-angular/testing';
 
 import { ClrFormsModule } from '../forms.module';
 import { ClrDateContainer } from './date-container';

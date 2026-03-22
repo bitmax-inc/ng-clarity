@@ -6,7 +6,7 @@
  */
 
 import { Directive, ElementRef, HostListener } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
 
 import { ClrDropdown } from './dropdown';
 import { DropdownFocusHandler } from './providers/dropdown-focus-handler.service';

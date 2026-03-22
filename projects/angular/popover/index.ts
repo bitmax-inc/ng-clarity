@@ -5,8 +5,8 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-export * from '@clr/angular/popover/dropdown';
-export * from '@clr/angular/popover/common';
+export * from '@bitmax/clr-angular/popover/dropdown';
+export * from '@bitmax/clr-angular/popover/common';
 export * from './popover.module';
-export * from '@clr/angular/popover/signpost';
-export * from '@clr/angular/popover/tooltip';
+export * from '@bitmax/clr-angular/popover/signpost';
+export * from '@bitmax/clr-angular/popover/tooltip';

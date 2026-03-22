@@ -6,8 +6,8 @@
  */
 
 import { Component, ContentChild, Input } from '@angular/core';
-import { ClrPopoverHostDirective, ClrPopoverPoint, ClrPopoverService } from '@clr/angular/popover/common';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { ClrPopoverHostDirective, ClrPopoverPoint, ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 
 import { SignpostFocusManager } from './providers/signpost-focus-manager.service';
 import { SignpostIdService } from './providers/signpost-id.service';

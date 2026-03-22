@@ -6,7 +6,7 @@
  */
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FilterablePropertyDefinition, FilterMode, PropertyFilter } from '@clr/addons/datagrid-filters';
+import { FilterablePropertyDefinition, FilterMode, PropertyFilter } from '@bitmax/clr-addons/datagrid-filters';
 
 @Component({
   selector: 'appfx-datagrid-filters',

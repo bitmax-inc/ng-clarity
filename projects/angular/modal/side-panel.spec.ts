@@ -8,8 +8,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { delay, expectActiveElementToBe } from '@clr/angular/testing';
-import { CdkTrapFocusModule, CdkTrapFocusModule_CdkTrapFocus } from '@clr/angular/utils';
+import { delay, expectActiveElementToBe } from '@bitmax/clr-angular/testing';
+import { CdkTrapFocusModule, CdkTrapFocusModule_CdkTrapFocus } from '@bitmax/clr-angular/utils';
 
 import { ClrSidePanel } from './side-panel';
 import { ClrSidePanelModule } from './side-panel.module';
@@ -158,7 +158,7 @@ describe('Side Panel', () => {
 
     // We make sure to wait for the animation to be over before emitting the output
 
-    // todo: uncomment this after animation bug is fixed https://github.com/angular/angular/issues/15798
+    // todo: uncomment this after animation bug is fixed https://github.com/clr-angular/clr-angular/issues/15798
     // expect(fixture.componentInstance.opened).toBe(true);
     fixture.nativeElement
       .querySelector('.modal-dialog')

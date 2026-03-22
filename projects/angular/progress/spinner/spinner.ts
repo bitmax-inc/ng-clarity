@@ -6,7 +6,7 @@
  */
 
 import { Component, HostBinding, Input } from '@angular/core';
-import { isBooleanAttributeSet } from '@clr/angular/utils';
+import { isBooleanAttributeSet } from '@bitmax/clr-angular/utils';
 
 @Component({
   selector: 'clr-spinner',

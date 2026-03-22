@@ -12,7 +12,7 @@ function prepare(_, context) {
   const packageManifestPath = './dist/clr-angular/package.json';
   const packageManifest = JSON.parse(fs.readFileSync(packageManifestPath, 'utf8'));
   packageManifest.peerDependencies = packageManifest.peerDependencies || {};
-  packageManifest.peerDependencies['@clr/ui'] = context.nextRelease.version;
+  packageManifest.peerDependencies['@bitmax/clr-ui'] = context.nextRelease.version;
   fs.writeFileSync(packageManifestPath, JSON.stringify(packageManifest, null, 2) + '\n');
 }
 

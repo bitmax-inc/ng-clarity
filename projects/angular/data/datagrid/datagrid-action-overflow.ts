@@ -13,8 +13,8 @@ import {
   ClrPopoverService,
   ClrPopoverType,
   mapPopoverKeyToPosition,
-} from '@clr/angular/popover/common';
-import { ClrCommonStringsService, ClrKeyFocus, uniqueIdFactory } from '@clr/angular/utils';
+} from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService, ClrKeyFocus, uniqueIdFactory } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { RowActionService } from './providers/row-action-service';

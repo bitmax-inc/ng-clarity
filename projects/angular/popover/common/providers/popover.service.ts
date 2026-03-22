@@ -7,7 +7,7 @@
 
 import { FlexibleConnectedPositionStrategyOrigin } from '@angular/cdk/overlay';
 import { ElementRef, Injectable } from '@angular/core';
-import { preventArrowKeyScroll } from '@clr/angular/utils';
+import { preventArrowKeyScroll } from '@bitmax/clr-angular/utils';
 import { Observable, Subject } from 'rxjs';
 
 import { ClrPopoverPosition } from '../utils/popover-positions';

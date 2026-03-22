@@ -10,9 +10,9 @@ import { ChangeDetectorRef, SimpleChange } from '@angular/core';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ClrCheckboxModule, ClrInputModule, ClrRadioModule, ClrSelectModule } from '@clr/angular/forms';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrSpinnerModule } from '@clr/angular/progress/spinner';
+import { ClrCheckboxModule, ClrInputModule, ClrRadioModule, ClrSelectModule } from '@bitmax/clr-angular/forms';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrSpinnerModule } from '@bitmax/clr-angular/progress/spinner';
 import { of, throwError } from 'rxjs';
 
 import { DatagridFiltersStrings } from '../datagrid-filters-strings.service';

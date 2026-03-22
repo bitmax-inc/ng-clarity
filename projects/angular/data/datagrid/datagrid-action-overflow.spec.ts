@@ -6,9 +6,9 @@
  */
 
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { expectActiveElementToBe, TestContext } from '@clr/angular/testing';
-import { commonStringsDefault } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { expectActiveElementToBe, TestContext } from '@bitmax/clr-angular/testing';
+import { commonStringsDefault } from '@bitmax/clr-angular/utils';
 
 import { ClrDatagridActionOverflow } from './datagrid-action-overflow';
 import { RowActionService } from './providers/row-action-service';

@@ -109,7 +109,7 @@ export const coreCollectionAliases: IconAlias[] = [
  * Function that can be called to load the core icon set.
  *
  * ```typescript
- * import { loadCoreIconSet } from '@clr/angular';
+ * import { loadCoreIconSet } from '@bitmax/clr-angular';
  *
  * loadCoreIconSet();
  * ```
@@ -120,7 +120,7 @@ export function loadCoreIconSet() {
   ClarityIcons.addAliases(...coreCollectionAliases);
 }
 
-// declare module '@clr/angular' {
+// declare module '@bitmax/clr-angular' {
 //   interface IconRegistrySources {
 //     [unknownIconName]: string;
 //     [angleIconName]: string;

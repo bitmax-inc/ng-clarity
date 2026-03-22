@@ -7,7 +7,7 @@
 
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { TestContext } from '@clr/angular/testing';
+import { TestContext } from '@bitmax/clr-angular/testing';
 import { BehaviorSubject } from 'rxjs';
 
 import { DatagridColumnChanges } from '../enums/column-changes.enum';

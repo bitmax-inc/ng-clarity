@@ -8,8 +8,8 @@
 import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { FormControl, FormsModule, Validators } from '@angular/forms';
-import { ClrInput, ClrInputContainer } from '@clr/angular/forms/input';
-import { ClrIcon } from '@clr/angular/icon';
+import { ClrInput, ClrInputContainer } from '@bitmax/clr-angular/forms/input';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
 
 import { ClrIfSuccess } from './if-success';
 import { ClrControlSuccess } from '../control-subtexts/success';

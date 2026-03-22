@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { angleIcon, ClarityIcons, filterGridIcon, plusIcon, searchIcon, windowCloseIcon } from '@clr/angular/icon';
+import { angleIcon, ClarityIcons, filterGridIcon, plusIcon, searchIcon, windowCloseIcon } from '@bitmax/clr-angular/icon';
 
 import { DatagridFiltersStrings } from './datagrid-filters-strings.service';
 import { DatagridFiltersUserService } from './datagrid-filters-user-service';

@@ -6,7 +6,7 @@
  */
 
 import { ChangeDetectorRef, Directive, EventEmitter, OnInit, SimpleChanges } from '@angular/core';
-import { IfExpandService, uniqueIdFactory } from '@clr/angular/utils';
+import { IfExpandService, uniqueIdFactory } from '@bitmax/clr-angular/utils';
 import { Observable } from 'rxjs';
 import { filter, tap } from 'rxjs/operators';
 

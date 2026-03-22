@@ -9,7 +9,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, DebugElement, InjectionToken, Type } from '@ang
 import { ComponentFixture, TestBed, TestModuleMetadata } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ClarityModule } from '@clr/angular';
+import { ClarityModule } from '@bitmax/clr-angular';
 // import { reportSlowSpecs } from "./slow-specs.spec";
 
 export class TestContext<D, C> {

@@ -13,7 +13,7 @@ import {
   FormsFocusService,
   LayoutService,
   NgControlService,
-} from '@clr/angular/forms/common';
+} from '@bitmax/clr-angular/forms/common';
 
 import { ClrNumberInput } from './number-input';
 

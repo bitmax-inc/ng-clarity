@@ -7,8 +7,8 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrDropdownModule } from '@clr/angular/popover/dropdown';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrDropdownModule } from '@bitmax/clr-angular/popover/dropdown';
 
 import { ClrAriaCurrentLink } from './aria-current-link';
 import { MainContainerWillyWonka } from './chocolate/main-container-willy-wonka';

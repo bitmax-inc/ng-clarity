@@ -11,7 +11,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { DomAdapter } from '@clr/angular/utils';
+import { DomAdapter } from '@bitmax/clr-angular/utils';
 
 @Injectable()
 export class NoopDomAdapter implements DomAdapter {

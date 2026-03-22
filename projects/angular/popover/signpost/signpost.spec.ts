@@ -6,8 +6,8 @@
  */
 
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { ClrPopoverPosition, ClrPopoverService, SIGNPOST_POSITIONS } from '@clr/angular/popover/common';
-import { delay, expectActiveElementNotToBe, expectActiveElementToBe, spec, TestContext } from '@clr/angular/testing';
+import { ClrPopoverPosition, ClrPopoverService, SIGNPOST_POSITIONS } from '@bitmax/clr-angular/popover/common';
+import { delay, expectActiveElementNotToBe, expectActiveElementToBe, spec, TestContext } from '@bitmax/clr-angular/testing';
 
 import { SignpostIdService } from './providers/signpost-id.service';
 import { ClrSignpost } from './signpost';

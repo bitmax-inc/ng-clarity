@@ -8,8 +8,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ClrCommonFormsModule } from '@clr/angular/forms/common';
-import { ClarityIcons, ClrIcon, errorStandardIcon, minusIcon, plusIcon, successStandardIcon } from '@clr/angular/icon';
+import { ClrCommonFormsModule } from '@bitmax/clr-angular/forms/common';
+import { ClarityIcons, ClrIcon, errorStandardIcon, minusIcon, plusIcon, successStandardIcon } from '@bitmax/clr-angular/icon';
 
 import { ClrNumberInput } from './number-input';
 import { ClrNumberInputContainer } from './number-input-container';

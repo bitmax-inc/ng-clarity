@@ -7,8 +7,8 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
-import { ClarityIcons, ClrIcon, windowCloseIcon } from '@clr/angular/icon';
-import { CdkTrapFocusModule } from '@clr/angular/utils';
+import { ClarityIcons, ClrIcon, windowCloseIcon } from '@bitmax/clr-angular/icon';
+import { CdkTrapFocusModule } from '@bitmax/clr-angular/utils';
 
 import { ClrModal } from './modal';
 import { ClrModalBody } from './modal-body';

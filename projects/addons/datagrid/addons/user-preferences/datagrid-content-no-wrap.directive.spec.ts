@@ -11,7 +11,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ClrDatagridModule } from '@clr/angular/data/datagrid';
+import { ClrDatagridModule } from '@bitmax/clr-angular/data/datagrid';
 import { of } from 'rxjs';
 
 import { appfxDatagridUserPreferencesToken } from './appfx-datagrid-user-preferences.token';

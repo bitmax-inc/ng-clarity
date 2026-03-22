@@ -8,7 +8,7 @@
 import { Component, DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DomAdapter } from '@clr/angular/utils';
+import { DomAdapter } from '@bitmax/clr-angular/utils';
 
 import { ClrDatagridModule } from './datagrid.module';
 import { DatagridColumnChanges } from './enums/column-changes.enum';
@@ -193,7 +193,7 @@ class HideableSugaredTest {
       <ng-template clrDgHideableColumn>Date</ng-template>
     </clr-dg-column>
     <clr-dg-column>
-      <!-- sugar syntax does not support @Output on structural directives, see https://github.com/angular/angular/issues/12121 -->
+      <!-- sugar syntax does not support @Output on structural directives, see https://github.com/clr-angular/clr-angular/issues/12121 -->
       <ng-template clrDgHideableColumn [(clrDgHidden)]="hideSecond">Name</ng-template>
     </clr-dg-column>
   `,

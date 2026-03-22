@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { addHelpers } from '@clr/angular/testing';
+import { addHelpers } from '@bitmax/clr-angular/testing';
 
 import DropdownItemSpecs from './dropdown-item.spec';
 import DropdownMenuSpecs from './dropdown-menu.spec';

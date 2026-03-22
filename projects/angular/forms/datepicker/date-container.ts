@@ -13,15 +13,15 @@ import {
   FormsFocusService,
   LayoutService,
   NgControlService,
-} from '@clr/angular/forms/common';
+} from '@bitmax/clr-angular/forms/common';
 import {
   ClrPopoverHostDirective,
   ClrPopoverPosition,
   ClrPopoverService,
   ClrPopoverType,
   DROPDOWN_POSITIONS,
-} from '@clr/angular/popover/common';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+} from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 import { startWith } from 'rxjs/operators';
 
 import { DayModel } from './model/day.model';

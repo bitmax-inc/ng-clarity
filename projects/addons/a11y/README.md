@@ -1,13 +1,13 @@
 ## Overview
 
-The `@clr/addons/a11y` package contains a number of components, directives and services to improve accessibility.
+The `@bitmax/clr-addons/a11y` package contains a number of components, directives and services to improve accessibility.
 
 You'll need to import the AppfxA11yModule in your module to be able to use them.
 
 Code example for importing the AppfxA11yModule in a custom module:
 
 ```ts
-import { AppfxA11yModule } from '@clr/addons/a11y';
+import { AppfxA11yModule } from '@bitmax/clr-addons/a11y';
 
 @NgModule({
   imports: [AppfxA11yModule],
@@ -23,7 +23,7 @@ Automatically include the tab links in overflow if there is not enough width. Yo
 
 Compatible with both:
 
-- [Appfx Tabs] (https://localhost:4200/@clr/addons/tabs/overview), It's supported by default, no need to add any flags or directives to an existing `appfx-tabs` tag.
+- [Appfx Tabs] (https://localhost:4200/@bitmax/clr-addons/tabs/overview), It's supported by default, no need to add any flags or directives to an existing `appfx-tabs` tag.
 - [Clarity Tabs] (https://clarity.design/documentation/tabs)
 
 #### Clarity Example
@@ -62,7 +62,7 @@ A generic required field legend to be used with forms. To use the Required Field
 
 #### Localization support
 
-Consumers of the appfx-required-field-legend can use the [TranslateService] (@clr/addons/translate/overview) to sync the locale with their application locale.
+Consumers of the appfx-required-field-legend can use the [TranslateService] (@bitmax/clr-addons/translate/overview) to sync the locale with their application locale.
 
 #### Example Usage
 
@@ -116,7 +116,7 @@ A service for detecting zoom level based on document body size. Uses ResizeObser
 #### Example Usage
 
 ```ts
-import { ZoomLevel, ZoomLevelService } from "@clr/addons/a11y";
+import { ZoomLevel, ZoomLevelService } from "@bitmax/clr-addons/a11y";
 
 ...
 

@@ -7,7 +7,7 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { angleIcon, ClarityIcons, ClrIcon } from '@clr/angular/icon';
+import { angleIcon, ClarityIcons, ClrIcon } from '@bitmax/clr-angular/icon';
 
 import { ClrAccordion } from './accordion';
 import { ClrAccordionContent } from './accordion-content';

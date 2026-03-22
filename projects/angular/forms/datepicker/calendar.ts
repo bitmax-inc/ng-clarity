@@ -6,8 +6,8 @@
  */
 
 import { Component, ElementRef, HostListener, OnDestroy } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { Keys } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { Keys } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { DateRangeInput } from './interfaces/date-range.interface';

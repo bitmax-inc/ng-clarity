@@ -6,8 +6,8 @@
  */
 
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { ClrDatagridFilterInterface, ClrDatagridStringFilterInterface } from '@clr/angular/data/datagrid';
-import { ClrPopoverService } from '@clr/angular/popover/common';
+import { ClrDatagridFilterInterface, ClrDatagridStringFilterInterface } from '@bitmax/clr-angular/data/datagrid';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
 import { asyncScheduler, Subject } from 'rxjs';
 import { observeOn } from 'rxjs/operators';
 

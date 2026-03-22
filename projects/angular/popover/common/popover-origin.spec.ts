@@ -6,7 +6,7 @@
  */
 
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { spec, TestContext } from '@clr/angular/testing';
+import { spec, TestContext } from '@bitmax/clr-angular/testing';
 
 import { ClrPopoverOrigin } from './popover-origin';
 import { ClrPopoverService } from './providers/popover.service';

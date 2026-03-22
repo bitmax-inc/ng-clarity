@@ -22,8 +22,8 @@ import {
   ControlClassService,
   LayoutService,
   NgControlService,
-} from '@clr/angular/forms/common';
-import { uniqueIdFactory } from '@clr/angular/utils';
+} from '@bitmax/clr-angular/forms/common';
+import { uniqueIdFactory } from '@bitmax/clr-angular/utils';
 
 import { ClrRadio } from './radio';
 

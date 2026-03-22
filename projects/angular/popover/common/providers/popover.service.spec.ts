@@ -7,7 +7,7 @@
 
 import { Component, ElementRef } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { Keys } from '@clr/angular/utils';
+import { Keys } from '@bitmax/clr-angular/utils';
 import { Observable } from 'rxjs';
 
 import { ClrPopoverService } from './popover.service';

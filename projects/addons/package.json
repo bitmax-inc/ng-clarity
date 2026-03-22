@@ -1,5 +1,5 @@
 {
-  "name": "@clr/addons",
+  "name": "@bitmax/clr-addons",
   "description": "Addons for Clarity",
   "homepage": "https://clarity.design",
   "keywords": [
@@ -17,6 +17,9 @@
   "bugs": {
     "url": "https://github.com/vmware-clarity/ng-clarity/issues"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@angular/animations": "^21",
     "@angular/cdk": "^21",
@@ -25,7 +28,7 @@
     "@angular/forms": "^21",
     "@angular/platform-browser": "^21",
     "@angular/router": "^21",
-    "@clr/angular": ">= 18",
+    "@bitmax/clr-angular": ">= 18",
     "rxjs": "^7.8.0"
   }
 }

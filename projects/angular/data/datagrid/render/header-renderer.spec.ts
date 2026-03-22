@@ -7,8 +7,8 @@
 
 import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { delay, TestContext } from '@clr/angular/testing';
-import { DomAdapter, MOCK_DOM_ADAPTER_PROVIDER, MockDomAdapter } from '@clr/angular/utils';
+import { delay, TestContext } from '@bitmax/clr-angular/testing';
+import { DomAdapter, MOCK_DOM_ADAPTER_PROVIDER, MockDomAdapter } from '@bitmax/clr-angular/utils';
 import { BehaviorSubject } from 'rxjs';
 
 import { ClrDatagrid } from '../datagrid';

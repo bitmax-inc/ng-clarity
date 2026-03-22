@@ -6,8 +6,8 @@
  */
 
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, NgZone, Output, ViewChild } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { ClrCommonStringsService, DomAdapter } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService, DomAdapter } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { DatagridNumericFilterImpl } from './datagrid-numeric-filter-impl';

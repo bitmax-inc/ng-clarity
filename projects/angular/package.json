@@ -1,5 +1,5 @@
 {
-  "name": "@clr/angular",
+  "name": "@bitmax/clr-angular",
   "description": "Angular components for Clarity",
   "homepage": "https://clarity.design",
   "keywords": [
@@ -16,6 +16,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vmware-clarity/ng-clarity/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "peerDependencies": {
     "@angular/cdk": "^21",

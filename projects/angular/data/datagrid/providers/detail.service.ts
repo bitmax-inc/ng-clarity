@@ -6,7 +6,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { ModalStackService } from '@clr/angular/modal';
+import { ModalStackService } from '@bitmax/clr-angular/modal';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()

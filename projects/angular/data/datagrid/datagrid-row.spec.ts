@@ -8,8 +8,8 @@
 import { AnimationBuilder } from '@angular/animations';
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { delay, TestContext } from '@clr/angular/testing';
-import { LoadingListener } from '@clr/angular/utils';
+import { delay, TestContext } from '@bitmax/clr-angular/testing';
+import { LoadingListener } from '@bitmax/clr-angular/utils';
 
 import { ClrDatagrid } from './datagrid';
 import { DatagridIfExpandService } from './datagrid-if-expanded.service';

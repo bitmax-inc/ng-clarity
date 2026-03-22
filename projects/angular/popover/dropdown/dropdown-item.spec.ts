@@ -6,8 +6,8 @@
  */
 
 import { Component } from '@angular/core';
-import { spec, TestContext } from '@clr/angular/testing';
-import { FocusableItem } from '@clr/angular/utils';
+import { spec, TestContext } from '@bitmax/clr-angular/testing';
+import { FocusableItem } from '@bitmax/clr-angular/utils';
 
 import { ClrDropdown } from './dropdown';
 import { ClrDropdownItem } from './dropdown-item';

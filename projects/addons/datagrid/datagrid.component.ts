@@ -27,9 +27,9 @@ import {
   TrackByFunction,
   ViewChild,
 } from '@angular/core';
-import { ZoomLevel, ZoomLevelService } from '@clr/addons/a11y';
-import { FilterablePropertyDefinition, FilterMode, PropertyFilter } from '@clr/addons/datagrid-filters';
-import { DragAndDropGroupService } from '@clr/addons/drag-and-drop';
+import { ZoomLevel, ZoomLevelService } from '@bitmax/clr-addons/a11y';
+import { FilterablePropertyDefinition, FilterMode, PropertyFilter } from '@bitmax/clr-addons/datagrid-filters';
+import { DragAndDropGroupService } from '@bitmax/clr-addons/drag-and-drop';
 import {
   ClrDatagrid,
   ClrDatagridPagination,
@@ -38,7 +38,7 @@ import {
   ClrDatagridVirtualScrollRangeInterface,
   SelectionType,
   selectionTypeAttribute,
-} from '@clr/angular/data/datagrid';
+} from '@bitmax/clr-angular/data/datagrid';
 import { Subject, Subscription } from 'rxjs';
 import { filter, takeUntil } from 'rxjs/operators';
 

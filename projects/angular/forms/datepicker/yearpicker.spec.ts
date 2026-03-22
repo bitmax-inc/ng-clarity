@@ -6,9 +6,9 @@
  */
 
 import { Component } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { TestContext } from '@clr/angular/testing';
-import { ClrCommonStringsService, Keys } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { TestContext } from '@bitmax/clr-angular/testing';
+import { ClrCommonStringsService, Keys } from '@bitmax/clr-angular/utils';
 
 import { DateNavigationService } from './providers/date-navigation.service';
 import { DatepickerFocusService } from './providers/datepicker-focus.service';

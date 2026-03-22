@@ -12,7 +12,7 @@ import {
   ControlIdService,
   LayoutService,
   NgControlService,
-} from '@clr/angular/forms/common';
+} from '@bitmax/clr-angular/forms/common';
 
 @Component({
   selector: 'clr-range-container',

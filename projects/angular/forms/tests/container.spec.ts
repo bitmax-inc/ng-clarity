@@ -15,10 +15,10 @@ import {
   LayoutService,
   MarkControlService,
   NgControlService,
-} from '@clr/angular/forms/common';
-import { DatalistIdService } from '@clr/angular/forms/datalist';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrPopoverContent } from '@clr/angular/popover';
+} from '@bitmax/clr-angular/forms/common';
+import { DatalistIdService } from '@bitmax/clr-angular/forms/datalist';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrPopoverContent } from '@bitmax/clr-angular/popover';
 
 export function ContainerNoLabelSpec(testContainer, testControl, testComponent): void {
   describe('no label', () => {

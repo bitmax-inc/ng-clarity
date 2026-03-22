@@ -6,8 +6,8 @@
  */
 
 import { Component, Input, ViewChild } from '@angular/core';
-import { ClrControlLabel } from '@clr/angular/forms/common';
-import { uniqueIdFactory } from '@clr/angular/utils';
+import { ClrControlLabel } from '@bitmax/clr-angular/forms/common';
+import { uniqueIdFactory } from '@bitmax/clr-angular/utils';
 
 import { Page } from './providers/page';
 

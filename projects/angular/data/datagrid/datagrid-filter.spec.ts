@@ -6,9 +6,9 @@
  */
 
 import { Component, ViewChild } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { TestContext } from '@clr/angular/testing';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { TestContext } from '@bitmax/clr-angular/testing';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 import { Subject } from 'rxjs';
 
 import { ClrDatagridFilter } from './datagrid-filter';

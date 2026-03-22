@@ -7,7 +7,7 @@
 
 import { Directive, ElementRef, Injector, Optional, Renderer2, Self, ViewContainerRef } from '@angular/core';
 import { NgControl } from '@angular/forms';
-import { WrappedFormControl } from '@clr/angular/forms/common';
+import { WrappedFormControl } from '@bitmax/clr-angular/forms/common';
 
 import { ClrRadioWrapper } from './radio-wrapper';
 

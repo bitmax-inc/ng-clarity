@@ -7,7 +7,7 @@
 
 import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ClrLoadingModule, ClrLoadingState } from '@clr/angular/utils';
+import { ClrLoadingModule, ClrLoadingState } from '@bitmax/clr-angular/utils';
 
 import { ClrLoadingButton } from './loading-button';
 import { ClrLoadingButtonModule } from './loading-button.module';

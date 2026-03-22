@@ -40,7 +40,7 @@ The datagrid has a customizable responsive action bar component: `appfx-datagrid
 
 The datagrid integrates seamlessly with Advanced Filters, enabling users to create and manage complex filtering queries.
 
-For detailed guidance, refer to the [Advanced Filters Doc] (@clr/addons/datagrid-filters/overview)
+For detailed guidance, refer to the [Advanced Filters Doc] (@bitmax/clr-addons/datagrid-filters/overview)
 
 ![Datagrid Filters example screen](assets/appfx/datagrid-advanced-filter-overview.png)
 

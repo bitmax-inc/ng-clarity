@@ -7,9 +7,9 @@
 
 import { Component, PLATFORM_ID, ViewChild } from '@angular/core';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ClrIcon } from '@clr/angular/icon';
-import { expectActiveElementToBe, spec, TestContext } from '@clr/angular/testing';
-import { ClrCommonStringsService, IfExpandService, Keys } from '@clr/angular/utils';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { expectActiveElementToBe, spec, TestContext } from '@bitmax/clr-angular/testing';
+import { ClrCommonStringsService, IfExpandService, Keys } from '@bitmax/clr-angular/utils';
 
 import { DeclarativeTreeNodeModel } from './models/declarative-tree-node.model';
 import { RecursiveTreeNodeModel } from './models/recursive-tree-node.model';

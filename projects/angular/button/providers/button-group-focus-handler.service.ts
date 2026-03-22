@@ -6,8 +6,8 @@
  */
 
 import { Injectable, Renderer2 } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { FocusableItem, FocusService, Linkers } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { FocusableItem, FocusService, Linkers } from '@bitmax/clr-angular/utils';
 
 import { InitialFocus } from './button-group-focus.enum';
 @Injectable()

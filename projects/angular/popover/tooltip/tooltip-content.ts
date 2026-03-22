@@ -13,8 +13,8 @@ import {
   ClrPopoverType,
   POPOVER_HOST_ORIGIN,
   TOOLTIP_POSITIONS,
-} from '@clr/angular/popover/common';
-import { uniqueIdFactory } from '@clr/angular/utils';
+} from '@bitmax/clr-angular/popover/common';
+import { uniqueIdFactory } from '@bitmax/clr-angular/utils';
 
 import { TooltipIdService } from './providers/tooltip-id.service';
 import { TooltipMouseService } from './providers/tooltip-mouse.service';

@@ -21,8 +21,8 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormGroupName, NgModelGroup } from '@angular/forms';
-import { CollapsiblePanel } from '@clr/angular/collapsible-panel';
-import { ClrCommonStringsService, IfExpandService, triggerAllFormControlValidation } from '@clr/angular/utils';
+import { CollapsiblePanel } from '@bitmax/clr-angular/collapsible-panel';
+import { ClrCommonStringsService, IfExpandService, triggerAllFormControlValidation } from '@bitmax/clr-angular/utils';
 import { Observable, Subscription } from 'rxjs';
 import { distinctUntilChanged, filter, skipUntil, tap } from 'rxjs/operators';
 

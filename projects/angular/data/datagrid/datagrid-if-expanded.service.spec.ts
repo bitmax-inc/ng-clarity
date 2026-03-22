@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { ClrLoadingState } from '@clr/angular/utils';
+import { ClrLoadingState } from '@bitmax/clr-angular/utils';
 
 import { DatagridIfExpandService } from './datagrid-if-expanded.service';
 

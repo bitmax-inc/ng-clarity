@@ -11,7 +11,7 @@ import { Component, ViewChild } from '@angular/core';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ZoomLevelService } from '@clr/addons/a11y';
+import { ZoomLevelService } from '@bitmax/clr-addons/a11y';
 import {
   GridHelper,
   MockDatagridActionBarComponent,
@@ -19,8 +19,8 @@ import {
   MockDatagridColumnToggleComponent,
   MockIsRowSelectablePipe,
   ZoomLevelServiceMock,
-} from '@clr/addons/testing';
-import { SelectionType } from '@clr/angular/data/datagrid';
+} from '@bitmax/clr-addons/testing';
+import { SelectionType } from '@bitmax/clr-angular/data/datagrid';
 
 import { DatagridColumnsOrderModule } from '../addons/column-ordering/datagrid-columns-order.module';
 import { ExportProviderService } from '../addons/export/export-provider.service';

@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { IfExpandService } from '@clr/angular/utils';
+import { IfExpandService } from '@bitmax/clr-angular/utils';
 
 import { ClrAccordionModule } from './accordion.module';
 

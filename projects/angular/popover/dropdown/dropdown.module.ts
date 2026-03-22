@@ -7,8 +7,8 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrIfOpen } from '@clr/angular/popover/common';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrIfOpen } from '@bitmax/clr-angular/popover/common';
 
 import { ClrDropdown } from './dropdown';
 import { ClrDropdownItem } from './dropdown-item';

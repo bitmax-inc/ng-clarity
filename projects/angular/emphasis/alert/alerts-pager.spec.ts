@@ -7,7 +7,7 @@
 
 import { Component, QueryList, Type, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 
 import { ClrAlert } from './alert';
 import { ClrAlertsPager } from './alerts-pager';

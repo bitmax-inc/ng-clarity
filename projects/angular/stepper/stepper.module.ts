@@ -7,7 +7,7 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { angleIcon, ClarityIcons, ClrIcon, errorStandardIcon, successStandardIcon } from '@clr/angular/icon';
+import { angleIcon, ClarityIcons, ClrIcon, errorStandardIcon, successStandardIcon } from '@bitmax/clr-angular/icon';
 
 import { StepperOompaLoompa } from './chocolate/stepper-oompa-loompa';
 import { StepperWillyWonka } from './chocolate/stepper-willy-wonka';

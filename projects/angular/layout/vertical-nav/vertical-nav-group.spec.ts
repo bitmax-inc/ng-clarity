@@ -9,9 +9,9 @@ import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ClrIcon } from '@clr/angular/icon';
-import { delay } from '@clr/angular/testing';
-import { IfExpandService } from '@clr/angular/utils';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { delay } from '@bitmax/clr-angular/testing';
+import { IfExpandService } from '@bitmax/clr-angular/utils';
 
 import { VerticalNavGroupRegistrationService } from './providers/vertical-nav-group-registration.service';
 import { VerticalNavService } from './providers/vertical-nav.service';

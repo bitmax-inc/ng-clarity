@@ -9,7 +9,7 @@ import { registerLocaleData } from '@angular/common';
 import localeHr from '@angular/common/locales/hr';
 import localeJa from '@angular/common/locales/ja';
 import localeNl from '@angular/common/locales/nl';
-import { assertEqualDates } from '@clr/angular/testing';
+import { assertEqualDates } from '@bitmax/clr-angular/testing';
 
 import { DateIOService } from './date-io.service';
 import { LocaleHelperService } from './locale-helper.service';

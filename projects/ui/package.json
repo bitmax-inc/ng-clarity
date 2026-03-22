@@ -1,5 +1,5 @@
 {
-  "name": "@clr/ui",
+  "name": "@bitmax/clr-ui",
   "description": "CSS for Clarity",
   "homepage": "https://clarity.design",
   "repository": {
@@ -10,5 +10,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vmware-clarity/ng-clarity/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

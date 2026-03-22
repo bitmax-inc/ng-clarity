@@ -6,7 +6,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { CollapsiblePanelService } from '@clr/angular/collapsible-panel';
+import { CollapsiblePanelService } from '@bitmax/clr-angular/collapsible-panel';
 import { Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 

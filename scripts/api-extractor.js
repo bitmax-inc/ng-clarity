@@ -9,7 +9,7 @@
  * API Extractor Runner
  *
  * Runs Microsoft's API Extractor against every public entry point of each
- * library in this monorepo (@clr/angular and @clr/addons). It operates in
+ * library in this monorepo (@bitmax/clr-angular and @bitmax/clr-addons). It operates in
  * two modes controlled by the --local flag:
  *
  *   npm run public-api:update   (--local)  — Regenerates .api.md report files
@@ -65,7 +65,7 @@ const EXCLUDED_SUB_DIRS = new Set(['src', 'assets', 'styles', 'types', 'schemati
 const LIBRARIES = [
   {
     id: 'angular',
-    pkgName: '@clr/angular',
+    pkgName: '@bitmax/clr-angular',
     distDir: path.join(CWD, 'dist/clr-angular'),
     typesDir: path.join(CWD, 'dist/clr-angular/types'),
     srcRoot: path.join(CWD, 'projects/angular'),
@@ -74,7 +74,7 @@ const LIBRARIES = [
   },
   {
     id: 'addons',
-    pkgName: '@clr/addons',
+    pkgName: '@bitmax/clr-addons',
     distDir: path.join(CWD, 'dist/clr-addons'),
     typesDir: path.join(CWD, 'dist/clr-addons/types'),
     srcRoot: path.join(CWD, 'projects/addons'),

@@ -17,8 +17,8 @@ import {
   Optional,
   QueryList,
 } from '@angular/core';
-import { ClrPopoverService, POPOVER_HOST_ORIGIN } from '@clr/angular/popover/common';
-import { ClrCommonStringsService, ClrLoadingState, IF_ACTIVE_ID, LoadingListener } from '@clr/angular/utils';
+import { ClrPopoverService, POPOVER_HOST_ORIGIN } from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService, ClrLoadingState, IF_ACTIVE_ID, LoadingListener } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { ClrOption } from './option';

@@ -18,8 +18,8 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { ClrCommonStringsService, DomAdapter } from '@clr/angular/utils';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService, DomAdapter } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { DatagridStringFilterImpl } from './datagrid-string-filter-impl';

@@ -7,7 +7,7 @@
 
 // Disable the duplicate string check because this is a translations file.
 
-import { AppfxTranslations } from '@clr/addons/translate';
+import { AppfxTranslations } from '@bitmax/clr-addons/translate';
 
 export const translations: AppfxTranslations = {
   en: {

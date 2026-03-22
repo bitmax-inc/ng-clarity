@@ -8,8 +8,8 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ClrPopoverContent, ClrPopoverPosition, ClrPopoverService } from '@clr/angular/popover/common';
-import { FocusableItem } from '@clr/angular/utils';
+import { ClrPopoverContent, ClrPopoverPosition, ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { FocusableItem } from '@bitmax/clr-angular/utils';
 
 import { ClrDropdown } from './dropdown';
 import { ClrDropdownMenu } from './dropdown-menu';

@@ -10,9 +10,9 @@ import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testin
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivatedRoute } from '@angular/router';
-import { ElementResizeService } from '@clr/addons/a11y';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrDropdownModule, ClrTooltipModule } from '@clr/angular/popover';
+import { ElementResizeService } from '@bitmax/clr-addons/a11y';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrDropdownModule, ClrTooltipModule } from '@bitmax/clr-angular/popover';
 import { Observable, of, Subject } from 'rxjs';
 
 import { DatagridActionBarComponent } from './datagrid-action-bar.component';

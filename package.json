@@ -1,5 +1,5 @@
 {
-  "name": "@bitmax/ng-clarity",
+  "name": "@bitmax/clr-angular",
   "private": true,
   "engines": {
     "yarn": "please-use-npm",
@@ -26,6 +26,7 @@
     "prebuild:website": "npm-run-all prebuild:website:*",
     "prebuild:website:compile-content": "node ./projects/website/scripts/compile-content.js",
     "prebuild:website:generate-versions": "node ./projects/website/scripts/generate-versions.js",
+    "prepare:publish:bitmax": "node ./scripts/prepare-bitmax-publish.js",
     "test": "npm-run-all _test:angular _test:addons",
     "test:watch": "npm-run-all --parallel _test:angular:watch _test:addons:watch",
     "ts-node": "ts-node --project ./tsconfig-ts-node.json",

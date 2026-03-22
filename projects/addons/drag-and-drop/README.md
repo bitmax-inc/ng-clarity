@@ -19,7 +19,7 @@ The DragAndDropGroupService is a singleton Angular service that manages groups o
 _example-drag-and-drop.component.ts_:
 
 ```typescript
-import { DragAndDropGroupService } from '@clr/addons/drag-and-drop';
+import { DragAndDropGroupService } from '@bitmax/clr-addons/drag-and-drop';
 
 @Component({
   selector: 'example-drag-and-drop',

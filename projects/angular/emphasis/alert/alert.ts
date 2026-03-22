@@ -17,7 +17,7 @@ import {
   Output,
   Renderer2,
 } from '@angular/core';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { AlertIconAndTypesService } from './providers/icon-and-types.service';
@@ -98,7 +98,7 @@ export class ClrAlert implements OnInit, OnDestroy {
     if (value !== this._hidden) {
       this._hidden = value;
 
-      // CDE-1249 @HostBinding('class.alert-hidden') decoration will raise error in console https://angular.io/errors/NG0100
+      // CDE-1249 @HostBinding('class.alert-hidden') decoration will raise error in console https://clr-angular.io/errors/NG0100
       if (this._hidden) {
         this.renderer.addClass(this.hostElement.nativeElement, 'alert-hidden');
       } else {

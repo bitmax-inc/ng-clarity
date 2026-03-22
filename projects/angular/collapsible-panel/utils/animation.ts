@@ -6,7 +6,7 @@
  */
 
 import { animate, style, transition, trigger } from '@angular/animations';
-import { defaultAnimationTiming } from '@clr/angular/utils';
+import { defaultAnimationTiming } from '@bitmax/clr-angular/utils';
 
 /**
  * @deprecated Uses Angular's legacy animation engine via `@angular/animations`.

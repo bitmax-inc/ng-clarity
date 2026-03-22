@@ -294,7 +294,7 @@ export const essentialCollectionAliases: IconAlias[] = [
  * Function that can be called to load the core icon set.
  *
  * ```typescript
- * import { loadEssentialIconSet } from '@clr/angular';
+ * import { loadEssentialIconSet } from '@bitmax/clr-angular';
  *
  * loadEssentialIconSet();
  * ```
@@ -305,7 +305,7 @@ export function loadEssentialIconSet() {
   ClarityIcons.addAliases(...essentialCollectionAliases);
 }
 
-// declare module '@clr/angular' {
+// declare module '@bitmax/clr-angular' {
 //   interface IconRegistrySources {
 //     [accessibility1IconName]: string;
 //     [accessibility2IconName]: string;

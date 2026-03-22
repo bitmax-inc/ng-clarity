@@ -6,7 +6,7 @@
  */
 
 import { Directive } from '@angular/core';
-import { WillyWonka } from '@clr/angular/utils';
+import { WillyWonka } from '@bitmax/clr-angular/utils';
 
 @Directive({
   selector: 'clr-main-container',

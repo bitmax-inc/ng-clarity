@@ -6,6 +6,6 @@
  */
 
 export * from './emphasis.module';
-export * from '@clr/angular/emphasis/alert';
-export * from '@clr/angular/emphasis/badge';
-export * from '@clr/angular/emphasis/label';
+export * from '@bitmax/clr-angular/emphasis/alert';
+export * from '@bitmax/clr-angular/emphasis/badge';
+export * from '@bitmax/clr-angular/emphasis/label';

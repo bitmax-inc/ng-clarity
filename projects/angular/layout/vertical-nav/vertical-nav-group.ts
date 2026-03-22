@@ -6,7 +6,7 @@
  */
 
 import { AfterContentInit, Component, EventEmitter, HostBinding, Input, OnDestroy, Output } from '@angular/core';
-import { ClrCommonStringsService, IfExpandService } from '@clr/angular/utils';
+import { ClrCommonStringsService, IfExpandService } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { VerticalNavGroupRegistrationService } from './providers/vertical-nav-group-registration.service';

@@ -6,7 +6,7 @@
  */
 
 import { Component } from '@angular/core';
-import { bellIcon, ClarityIcons, cloudIcon, warningStandardIcon } from '@clr/angular/icon';
+import { bellIcon, ClarityIcons, cloudIcon, warningStandardIcon } from '@bitmax/clr-angular/icon';
 
 @Component({
   template: `

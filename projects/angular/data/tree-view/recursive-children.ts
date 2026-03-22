@@ -6,7 +6,7 @@
  */
 
 import { Component, Input, Optional } from '@angular/core';
-import { IfExpandService } from '@clr/angular/utils';
+import { IfExpandService } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { RecursiveTreeNodeModel } from './models/recursive-tree-node.model';
@@ -30,7 +30,7 @@ import { TreeFeaturesService } from './tree-features.service';
 })
 /**
  * Internal component, do not export!
- * This is part of the hack to get around https://github.com/angular/angular/issues/15998
+ * This is part of the hack to get around https://github.com/clr-angular/clr-angular/issues/15998
  */
 export class RecursiveChildren<T> {
   // Offering the option to either give the parent node to recurse potentially lazily,

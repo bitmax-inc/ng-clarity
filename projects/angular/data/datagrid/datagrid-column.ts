@@ -22,8 +22,8 @@ import {
   ViewChild,
   ViewContainerRef,
 } from '@angular/core';
-import { ClrPopoverHostDirective } from '@clr/angular/popover/common';
-import { ClrCommonStringsService, HostWrapper } from '@clr/angular/utils';
+import { ClrPopoverHostDirective } from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService, HostWrapper } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { DatagridPropertyComparator } from './built-in/comparators/datagrid-property-comparator';

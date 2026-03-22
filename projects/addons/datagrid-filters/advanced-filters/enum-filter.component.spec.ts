@@ -9,9 +9,9 @@ import { CommonModule } from '@angular/common';
 import { ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ClrCheckboxModule, ClrInputModule, ClrRadioModule, ClrSelectModule } from '@clr/angular/forms';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrSpinnerModule } from '@clr/angular/progress/spinner';
+import { ClrCheckboxModule, ClrInputModule, ClrRadioModule, ClrSelectModule } from '@bitmax/clr-angular/forms';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrSpinnerModule } from '@bitmax/clr-angular/progress/spinner';
 
 import { DatagridFiltersStrings } from '../datagrid-filters-strings.service';
 import { EnumFilterComponent } from './enum-filter.component';

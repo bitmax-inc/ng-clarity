@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { CollapsiblePanelModel } from '@clr/angular/collapsible-panel';
+import { CollapsiblePanelModel } from '@bitmax/clr-angular/collapsible-panel';
 
 import { StepperPanelStatus } from '../enums/stepper-panel-status.enum';
 

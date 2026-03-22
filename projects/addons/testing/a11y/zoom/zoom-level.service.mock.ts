@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { ZoomLevel } from '@clr/addons/a11y';
+import { ZoomLevel } from '@bitmax/clr-addons/a11y';
 import { ReplaySubject } from 'rxjs';
 
 export class ZoomLevelServiceMock {

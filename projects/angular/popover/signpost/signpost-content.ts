@@ -27,8 +27,8 @@ import {
   ClrPopoverType,
   POPOVER_HOST_ORIGIN,
   SIGNPOST_POSITIONS,
-} from '@clr/angular/popover/common';
-import { ClrCommonStringsService, uniqueIdFactory } from '@clr/angular/utils';
+} from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService, uniqueIdFactory } from '@bitmax/clr-angular/utils';
 
 import { SignpostFocusManager } from './providers/signpost-focus-manager.service';
 import { SignpostIdService } from './providers/signpost-id.service';

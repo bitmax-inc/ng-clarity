@@ -7,8 +7,8 @@
 
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ClrIcon } from '@clr/angular/icon';
-import { ClrPopoverService } from '@clr/angular/popover/common';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
 
 import { SignpostFocusManager } from './providers/signpost-focus-manager.service';
 import { SignpostIdService } from './providers/signpost-id.service';

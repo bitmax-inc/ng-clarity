@@ -29,7 +29,7 @@ import {
   HostWrapper,
   IfExpandService,
   LoadingListener,
-} from '@clr/angular/utils';
+} from '@bitmax/clr-angular/utils';
 import { combineLatest, ReplaySubject, Subscription } from 'rxjs';
 
 import { ClrDatagridCell } from './datagrid-cell';

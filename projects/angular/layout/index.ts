@@ -6,8 +6,8 @@
  */
 
 export * from './layout.module';
-export * from '@clr/angular/layout/main-container';
-export * from '@clr/angular/layout/nav';
-export * from '@clr/angular/layout/tabs';
-export * from '@clr/angular/layout/vertical-nav';
-export * from '@clr/angular/layout/breadcrumbs';
+export * from '@bitmax/clr-angular/layout/main-container';
+export * from '@bitmax/clr-angular/layout/nav';
+export * from '@bitmax/clr-angular/layout/tabs';
+export * from '@bitmax/clr-angular/layout/vertical-nav';
+export * from '@bitmax/clr-angular/layout/breadcrumbs';

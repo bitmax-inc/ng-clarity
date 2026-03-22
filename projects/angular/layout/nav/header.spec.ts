@@ -7,7 +7,7 @@
 
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ClrIcon } from '@clr/angular/icon';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
 
 import { MainContainerWillyWonka } from './chocolate/main-container-willy-wonka';
 import { ClrNavigationModule } from './navigation.module';

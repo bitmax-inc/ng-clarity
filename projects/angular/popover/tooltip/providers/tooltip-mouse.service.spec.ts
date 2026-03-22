@@ -5,8 +5,8 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { delay } from '@clr/angular/testing';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { delay } from '@bitmax/clr-angular/testing';
 
 import { TooltipMouseService } from './tooltip-mouse.service';
 

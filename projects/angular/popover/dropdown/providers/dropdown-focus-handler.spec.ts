@@ -8,8 +8,8 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ClrPopoverService } from '@clr/angular/popover/common';
-import { delay, expectActiveElementNotToBe, expectActiveElementToBe } from '@clr/angular/testing';
+import { ClrPopoverService } from '@bitmax/clr-angular/popover/common';
+import { delay, expectActiveElementNotToBe, expectActiveElementToBe } from '@bitmax/clr-angular/testing';
 import {
   ArrowKeyDirection,
   FOCUS_SERVICE_PROVIDER,
@@ -17,7 +17,7 @@ import {
   FocusService,
   Linkers,
   MockFocusableItem,
-} from '@clr/angular/utils';
+} from '@bitmax/clr-angular/utils';
 import { isObservable, Observable } from 'rxjs';
 
 import { DROPDOWN_FOCUS_HANDLER_PROVIDER, DropdownFocusHandler } from './dropdown-focus-handler.service';

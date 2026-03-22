@@ -9,8 +9,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Needed to recreate issue #1084
-import { SelectionType } from '@clr/angular';
-import { delay, TestContext } from '@clr/angular/testing';
+import { SelectionType } from '@bitmax/clr-angular';
+import { delay, TestContext } from '@bitmax/clr-angular/testing';
 
 import { ClrDatagridColumn } from '../datagrid-column';
 import { ClrDatagridModule } from '../datagrid.module';

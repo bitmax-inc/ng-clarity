@@ -11,14 +11,14 @@ import { Component, ViewChild } from '@angular/core';
 import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { ZoomLevelService } from '@clr/addons/a11y';
+import { ZoomLevelService } from '@bitmax/clr-addons/a11y';
 import {
   MockDatagridCellContainerComponent,
   MockDatagridColumnToggleComponent,
   MockIsRowSelectablePipe,
   ZoomLevelServiceMock,
-} from '@clr/addons/testing';
-import { ClrDatagridSortOrder } from '@clr/angular/data/datagrid';
+} from '@bitmax/clr-addons/testing';
+import { ClrDatagridSortOrder } from '@bitmax/clr-angular/data/datagrid';
 
 import { appfxDatagridPersistSettingsToken } from './appfx-datagrid-persist-settings.token';
 import { DatagridPersistSettingsDirective } from './datagrid-persist-settings.directive';

@@ -6,7 +6,7 @@
  */
 
 import { Injectable } from '@angular/core';
-import { ClrLoadingState, LoadingListener } from '@clr/angular/utils/loading';
+import { ClrLoadingState, LoadingListener } from '@bitmax/clr-angular/utils/loading';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable()

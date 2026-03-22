@@ -7,7 +7,7 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
-import { ClrIcon } from '@clr/angular/icon';
+import { ClrIcon } from '@bitmax/clr-angular/icon';
 
 import { ClrMainContainer } from './main-container';
 

@@ -11,8 +11,8 @@ import {
   ClrPopoverPosition,
   ClrPopoverService,
   ClrPopoverType,
-} from '@clr/angular/popover/common';
-import { ClrCommonStringsService, uniqueIdFactory } from '@clr/angular/utils';
+} from '@bitmax/clr-angular/popover/common';
+import { ClrCommonStringsService, uniqueIdFactory } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { columnToggleTrackByFn } from './datagrid-column-toggle-trackby';

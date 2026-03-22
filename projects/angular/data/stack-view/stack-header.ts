@@ -6,7 +6,7 @@
  */
 
 import { Component, Input } from '@angular/core';
-import { HeadingLevel } from '@clr/angular/utils';
+import { HeadingLevel } from '@bitmax/clr-angular/utils';
 
 import { ClrStackView } from './stack-view';
 

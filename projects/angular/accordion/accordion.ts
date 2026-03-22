@@ -17,7 +17,7 @@ import {
   QueryList,
   SimpleChanges,
 } from '@angular/core';
-import { CollapsiblePanelService } from '@clr/angular/collapsible-panel';
+import { CollapsiblePanelService } from '@bitmax/clr-angular/collapsible-panel';
 import { Subscription } from 'rxjs';
 import { startWith } from 'rxjs/operators';
 

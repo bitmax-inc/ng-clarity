@@ -9,7 +9,7 @@ import { A11yModule as CdkA11yModule } from '@angular/cdk/a11y';
 import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ClrCheckboxModule, ClrInputModule, ClrRadioModule, ClrSelectModule } from '@clr/angular/forms';
+import { ClrCheckboxModule, ClrInputModule, ClrRadioModule, ClrSelectModule } from '@bitmax/clr-angular/forms';
 import {
   angleIcon,
   ClarityIcons,
@@ -18,9 +18,9 @@ import {
   plusIcon,
   searchIcon,
   windowCloseIcon,
-} from '@clr/angular/icon';
-import { ClrSignpostModule } from '@clr/angular/popover/signpost';
-import { ClrSpinnerModule } from '@clr/angular/progress/spinner';
+} from '@bitmax/clr-angular/icon';
+import { ClrSignpostModule } from '@bitmax/clr-angular/popover/signpost';
+import { ClrSpinnerModule } from '@bitmax/clr-angular/progress/spinner';
 
 import { DateTimeFilterComponent } from './advanced-filters/date-time-filter.component';
 import { EnumFilterComponent } from './advanced-filters/enum-filter.component';

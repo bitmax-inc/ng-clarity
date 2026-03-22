@@ -17,7 +17,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { ClrCommonStringsService } from '@clr/angular/utils';
+import { ClrCommonStringsService } from '@bitmax/clr-angular/utils';
 
 import { ClrModal } from './modal';
 import { ClrModalConfigurationService } from './modal-configuration.service';

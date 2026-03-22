@@ -7,8 +7,8 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule, Type } from '@angular/core';
-import { angleIcon, ClarityIcons, ClrIcon } from '@clr/angular/icon';
-import { ClrLoadingModule } from '@clr/angular/utils';
+import { angleIcon, ClarityIcons, ClrIcon } from '@bitmax/clr-angular/icon';
+import { ClrLoadingModule } from '@bitmax/clr-angular/utils';
 
 import { RecursiveChildren } from './recursive-children';
 import { ClrRecursiveForOf } from './recursive-for-of';

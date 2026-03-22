@@ -6,6 +6,6 @@
  */
 
 export * from './data.module';
-export * from '@clr/angular/data/datagrid';
-export * from '@clr/angular/data/tree-view';
-export * from '@clr/angular/data/stack-view';
+export * from '@bitmax/clr-angular/data/datagrid';
+export * from '@bitmax/clr-angular/data/tree-view';
+export * from '@bitmax/clr-angular/data/stack-view';

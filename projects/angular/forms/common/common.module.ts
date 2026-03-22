@@ -7,7 +7,7 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ClarityIcons, ClrIcon, errorStandardIcon, successStandardIcon } from '@clr/angular/icon';
+import { ClarityIcons, ClrIcon, errorStandardIcon, successStandardIcon } from '@bitmax/clr-angular/icon';
 
 import { ClrControl } from './control';
 import { ClrControlContainer } from './control-container';

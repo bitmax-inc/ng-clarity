@@ -3,7 +3,7 @@
 1.  Install Clarity packages through npm:
 
     ```
-    npm install @clr/ui @clr/angular
+    npm install @bitmax/clr-ui @bitmax/clr-angular
     ```
 
 2.  Import the ClarityModule into your Angular application's module. Your application's main module might look like this:
@@ -11,7 +11,7 @@
     ```
     import { NgModule } from '@angular/core';
     import { BrowserModule } from '@angular/platform-browser';
-    import { ClarityModule } from '@clr/angular';
+    import { ClarityModule } from '@bitmax/clr-angular';
     import { AppComponent } from './app.component';
 
     @NgModule({
@@ -32,17 +32,17 @@
 ```
   //...
   "styles": [
-    "node_modules/@clr/ui/clr-ui.min.css",
+    "node_modules/@bitmax/clr-ui/clr-ui.min.css",
     //... any other styles
   ]
   //...
 ```
 
 ```scss
-@use '@clr/ui/clr-ui.min.css';
+@use '@bitmax/clr-ui/clr-ui.min.css';
 ```
 
-**Note**: The above instructions represent the best practice for Clarity Design System. For information about accommodating legacy themes, see the Legacy Styles section in the @clr/ui package.
+**Note**: The above instructions represent the best practice for Clarity Design System. For information about accommodating legacy themes, see the Legacy Styles section in the @bitmax/clr-ui package.
 
 4.  Set the Theme
     Add the `cds-theme=”light”` attribute to the body element in your main HTML file:

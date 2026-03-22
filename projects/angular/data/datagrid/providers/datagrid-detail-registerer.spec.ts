@@ -6,8 +6,8 @@
  */
 
 import { Component } from '@angular/core';
-import { TestContext } from '@clr/angular/testing';
-import { IfExpandService } from '@clr/angular/utils';
+import { TestContext } from '@bitmax/clr-angular/testing';
+import { IfExpandService } from '@bitmax/clr-angular/utils';
 
 import { ClrDatagrid } from '../datagrid';
 import { DatagridDetailRegisterer } from '../datagrid-detail-registerer';

@@ -6,7 +6,7 @@
  */
 
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
-import { ClrCommonStringsService, uniqueIdFactory } from '@clr/angular/utils';
+import { ClrCommonStringsService, uniqueIdFactory } from '@bitmax/clr-angular/utils';
 import { Subscription } from 'rxjs';
 
 import { VerticalNavGroupRegistrationService } from './providers/vertical-nav-group-registration.service';

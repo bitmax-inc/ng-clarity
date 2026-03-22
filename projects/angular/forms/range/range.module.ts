@@ -7,9 +7,9 @@
 
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ClrCommonFormsModule } from '@clr/angular/forms/common';
-import { ClarityIcons, ClrIcon, errorStandardIcon, successStandardIcon } from '@clr/angular/icon';
-import { ClrHostWrappingModule } from '@clr/angular/utils';
+import { ClrCommonFormsModule } from '@bitmax/clr-angular/forms/common';
+import { ClarityIcons, ClrIcon, errorStandardIcon, successStandardIcon } from '@bitmax/clr-angular/icon';
+import { ClrHostWrappingModule } from '@bitmax/clr-angular/utils';
 
 import { ClrRange } from './range';
 import { ClrRangeContainer } from './range-container';

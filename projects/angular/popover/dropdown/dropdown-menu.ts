@@ -25,8 +25,8 @@ import {
   ClrPopoverType,
   DROPDOWN_POSITIONS,
   POPOVER_HOST_ORIGIN,
-} from '@clr/angular/popover/common';
-import { FocusableItem } from '@clr/angular/utils';
+} from '@bitmax/clr-angular/popover/common';
+import { FocusableItem } from '@bitmax/clr-angular/utils';
 
 import { DropdownFocusHandler } from './providers/dropdown-focus-handler.service';
 
