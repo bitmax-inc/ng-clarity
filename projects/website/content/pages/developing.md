@@ -129,13 +129,13 @@ You can toggle to dark theme by setting `cds-theme="dark"`.
 
 ### Step 5: Add Clarity to Angular Application
 
-Import the `ClarityModule` and `BrowserAnimationsModule` into your Angular application's module. For
-example:
+Import the `ClarityModule` into your Angular application's module. Clarity's current Angular
+components do not require `BrowserAnimationsModule` or `provideAnimations()`, and Angular has
+deprecated the legacy animation engine APIs behind them. For example:
 
 ```typescript
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ClarityModule } from "@clr/angular";
 
 import { AppComponent } from "./app.component";
@@ -143,7 +143,6 @@ import { AppComponent } from "./app.component";
 @NgModule({
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     ClarityModule,
     ...
   ],
@@ -152,6 +151,11 @@ import { AppComponent } from "./app.component";
 })
 export class AppModule { }
 ```
+
+If your application directly uses legacy helpers from `@clr/angular/utils/animations` or
+`@clr/angular/collapsible-panel`, those helpers still depend on `@angular/animations` and are
+deprecated. Prefer CSS transitions/keyframes or Angular's `animate.enter` / `animate.leave` APIs in
+new code.
 
 ### Step 6: Run Your App
 

@@ -7,7 +7,16 @@
 
 import { animate, animation, style } from '@angular/animations';
 
+/**
+ * @deprecated Uses Angular's legacy animation engine via `@angular/animations`.
+ * Prefer CSS transitions/keyframes or `animate.enter` / `animate.leave` in application code.
+ */
 export const defaultAnimationTiming = '0.2s ease-in-out';
+
+/**
+ * @deprecated Uses Angular's legacy animation engine via `@angular/animations`.
+ * Prefer CSS transitions/keyframes or `animate.enter` / `animate.leave` in application code.
+ */
 export const defaultExpandAnimation = animation(
   [style({ height: '{{ startHeight }}px' }), animate(defaultAnimationTiming, style({ height: '*' }))],
   {

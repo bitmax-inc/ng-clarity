@@ -135,7 +135,8 @@
   }
 
   .#{$prefix}-content {
-    display: none;
+    display: block;
+    min-height: 0;
     overflow: hidden;
     border: tokens.$cds-global-space-1 solid $border-color;
     border-bottom: 0;
@@ -144,6 +145,14 @@
     .clr-form {
       padding: 0;
     }
+  }
+
+  .#{$prefix}-content-region {
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows tokens.$cds-global-animation-duration-quick
+      tokens.$cds-global-animation-easing-in-out;
   }
 
   .#{$prefix}-inner-content {
@@ -156,8 +165,8 @@
   }
 
   .#{$prefix}-panel-open {
-    & > .#{$prefix}-content-region .#{$prefix}-content {
-      display: block;
+    & > .#{$prefix}-content-region {
+      grid-template-rows: 1fr;
     }
 
     & > .#{$prefix}-header {

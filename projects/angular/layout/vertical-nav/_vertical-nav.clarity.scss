@@ -99,7 +99,19 @@
     }
 
     .nav-group-children {
+      display: grid;
+      grid-template-rows: 0fr;
       overflow-y: hidden;
+      visibility: hidden;
+      transition: grid-template-rows 0.2s ease-in-out;
+
+      > * {
+        min-height: 0;
+      }
+
+      &.is-expanded {
+        grid-template-rows: 1fr;
+      }
     }
 
     .nav-trigger,
@@ -330,6 +342,12 @@
     &.has-icons {
       .nav-group-children .nav-link {
         padding: vertical-nav-variables.$clr-vertical-nav-item-child-padding;
+      }
+    }
+
+    .nav-group.is-expanded {
+      .nav-group-children {
+        visibility: visible;
       }
     }
 

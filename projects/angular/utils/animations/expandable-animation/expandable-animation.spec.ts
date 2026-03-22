@@ -5,11 +5,9 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component, DebugElement, ViewChild } from '@angular/core';
+import { Component, DebugElement, SimpleChange, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { delay } from '@clr/angular/testing';
 
 import { ClrExpandableAnimationDirective } from './expandable-animation.directive';
 import { ClrExpandableAnimationModule } from './expandable-animation.module';
@@ -60,12 +58,61 @@ describe('Expandable animation component', () => {
 });
 describe('Expandable animation directive', () => {
   expandableAnimationSpec(TestComponentDirective, ClrExpandableAnimationDirective);
+
+  it('does not start the directive animation on the first input change', () => {
+    TestBed.configureTestingModule({
+      imports: [ClrExpandableAnimationModule],
+      declarations: [TestComponentDirective],
+      providers: [DomAdapter],
+    });
+
+    const localFixture = TestBed.createComponent(TestComponentDirective);
+    localFixture.detectChanges();
+
+    const directive = localFixture.debugElement
+      .query(By.directive(ClrExpandableAnimationDirective))
+      .injector.get(ClrExpandableAnimationDirective);
+    const playAnimationSpy = spyOn(directive, 'playAnimation');
+
+    directive.ngOnChanges({
+      expanded: new SimpleChange(undefined, false, true),
+    });
+
+    expect(playAnimationSpy).not.toHaveBeenCalled();
+
+    localFixture.destroy();
+  });
+
+  it('starts the directive animation after the first input change', async () => {
+    TestBed.configureTestingModule({
+      imports: [ClrExpandableAnimationModule],
+      declarations: [TestComponentDirective],
+      providers: [DomAdapter],
+    });
+
+    const localFixture = TestBed.createComponent(TestComponentDirective);
+    localFixture.detectChanges();
+
+    const directive = localFixture.debugElement
+      .query(By.directive(ClrExpandableAnimationDirective))
+      .injector.get(ClrExpandableAnimationDirective);
+    const playAnimationSpy = spyOn(directive, 'playAnimation');
+
+    directive.ngOnChanges({
+      expanded: new SimpleChange(false, true, false),
+    });
+    await Promise.resolve();
+
+    expect(playAnimationSpy).toHaveBeenCalled();
+
+    localFixture.destroy();
+  });
 });
 
 function expandableAnimationSpec(testComponent, component) {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ClrExpandableAnimationModule, NoopAnimationsModule],
+      imports: [ClrExpandableAnimationModule],
       declarations: [testComponent],
       providers: [DomAdapter],
     });
@@ -95,14 +142,14 @@ function expandableAnimationSpec(testComponent, component) {
       componentInstance.expanded = true;
       fixture.detectChanges();
       expect(clarityDirective.startHeight).toEqual(collapsedHeight);
-      await delay();
+      clarityDirective.finishAnimation();
       expect(clarityDirective.startHeight).toEqual(collapsedHeight * 2);
       const expandedHeight = clarityDirective.startHeight;
       componentInstance.data.pop();
       componentInstance.expanded = false;
       fixture.detectChanges();
       expect(clarityDirective.startHeight).toEqual(expandedHeight);
-      await delay();
+      clarityDirective.finishAnimation();
       expect(clarityDirective.startHeight).toEqual(collapsedHeight);
     });
   });
@@ -113,12 +160,21 @@ function expandableAnimationSpec(testComponent, component) {
       expect(collapsedHeight).toBeGreaterThan(0);
       componentInstance.data.push({ id: 2, value: 'two' });
       fixture.detectChanges();
-      await delay();
+      clarityDirective.finishAnimation();
       expect(clarityElement.clientHeight).toEqual(collapsedHeight * 2);
       componentInstance.data.pop();
       fixture.detectChanges();
-      await delay();
+      clarityDirective.finishAnimation();
       expect(clarityElement.clientHeight).toEqual(collapsedHeight);
+    });
+
+    it('applies and removes overflow during animation effects cleanup', () => {
+      clarityDirective.initAnimationEffects();
+      expect(clarityElement.style.overflow).toBe('hidden');
+
+      clarityDirective.cleanupAnimationEffects();
+
+      expect(clarityElement.style.overflow).toBe('');
     });
   });
 }

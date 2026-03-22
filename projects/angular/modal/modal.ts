@@ -5,7 +5,6 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { animate, AnimationEvent, style, transition, trigger } from '@angular/animations';
 import {
   Component,
   ContentChild,
@@ -34,37 +33,47 @@ import { ModalStackService } from './modal-stack.service';
       :host {
         display: none;
       }
+
       :host.open {
         display: inline;
       }
+
+      .modal-dialog {
+        opacity: 0;
+        transform: var(--clr-modal-dialog-closed-transform, translate(0, -25%));
+        transition:
+          opacity 0.2s ease-in-out,
+          transform 0.2s ease-in-out;
+      }
+
+      .modal-dialog.is-open {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+
+      .modal-backdrop {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+
+      .modal-backdrop.is-open {
+        opacity: 0.85;
+      }
+
+      .modal-dialog.no-animation,
+      .modal-backdrop.no-animation {
+        transition: none;
+      }
     `,
-  ],
-  animations: [
-    trigger('fadeMove', [
-      transition('* => fadeDown', [
-        style({ opacity: 0, transform: 'translate(0, -25%)' }),
-        animate('0.2s ease-in-out'),
-      ]),
-      transition('fadeDown => *', [
-        animate('0.2s ease-in-out', style({ opacity: 0, transform: 'translate(0, -25%)' })),
-      ]),
-      transition('* => fadeLeft', [style({ opacity: 0, transform: 'translate(25%, 0)' }), animate('0.2s ease-in-out')]),
-      transition('fadeLeft => *', [animate('0.2s ease-in-out', style({ opacity: 0, transform: 'translate(25%, 0)' }))]),
-      transition('* => fadeUp', [style({ opacity: 0, transform: 'translate(0, 50%)' }), animate('0.2s ease-in-out')]),
-      transition('fadeUp => *', [animate('0.2s ease-in-out', style({ opacity: 0, transform: 'translate(0, 50%)' }))]),
-    ]),
-    trigger('fade', [
-      transition('void => *', [style({ opacity: 0 }), animate('0.2s ease-in-out', style({ opacity: 0.85 }))]),
-      transition('* => void', [animate('0.2s ease-in-out', style({ opacity: 0 }))]),
-    ]),
   ],
   standalone: false,
 })
 export class ClrModal implements OnChanges, OnDestroy {
   modalId = uniqueIdFactory();
+  rendered = false;
   @ViewChild('title') title: ElementRef<HTMLElement>;
 
-  @Input('clrModalOpen') @HostBinding('class.open') _open = false;
+  @Input('clrModalOpen') _open = false;
   @Output('clrModalOpenChange') _openChanged = new EventEmitter<boolean>(false);
 
   @Input('clrModalClosable') closable = true;
@@ -85,6 +94,8 @@ export class ClrModal implements OnChanges, OnDestroy {
   @ContentChild('clrInternalModalContentTemplate') protected readonly modalContentTemplate: TemplateRef<any>;
 
   @ViewChild('body') private readonly bodyElementRef: ElementRef<HTMLElement>;
+  private dialogVisible = false;
+  private showAnimationFrame: number | null = null;
 
   constructor(
     private _scrollingService: ScrollingService,
@@ -92,6 +103,11 @@ export class ClrModal implements OnChanges, OnDestroy {
     private modalStackService: ModalStackService,
     private configuration: ClrModalConfigurationService
   ) {}
+
+  @HostBinding('class.open')
+  get hostOpen(): boolean {
+    return this.rendered;
+  }
 
   get fadeMove(): string {
     return this.skipAnimation ? '' : this.configuration.fadeMove;
@@ -104,19 +120,42 @@ export class ClrModal implements OnChanges, OnDestroy {
     return this.configuration.backdrop;
   }
 
+  get dialogOpen(): boolean {
+    return this.rendered && this.dialogVisible;
+  }
+
+  get dialogClosedTransform(): string {
+    switch (this.fadeMove) {
+      case 'fadeLeft':
+        return 'translate(25%, 0)';
+      case 'fadeUp':
+        return 'translate(0, 50%)';
+      case 'fadeDown':
+      default:
+        return 'translate(0, -25%)';
+    }
+  }
+
   // Detect when _open is set to true and set no-scrolling to true
   ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
-    if (!this.bypassScrollService && changes && Object.prototype.hasOwnProperty.call(changes, '_open')) {
+    if (changes && Object.prototype.hasOwnProperty.call(changes, '_open')) {
       if (changes._open.currentValue) {
-        this._scrollingService.stopScrolling();
-        this.modalStackService.trackModalOpen(this);
+        if (!this.bypassScrollService) {
+          this._scrollingService.stopScrolling();
+          this.modalStackService.trackModalOpen(this);
+        }
+        this.showModal();
       } else {
-        this._scrollingService.resumeScrolling();
+        if (!this.bypassScrollService) {
+          this._scrollingService.resumeScrolling();
+        }
+        this.hideModal();
       }
     }
   }
 
   ngOnDestroy(): void {
+    this.cancelScheduledShow();
     this._scrollingService.resumeScrolling();
   }
 
@@ -125,6 +164,7 @@ export class ClrModal implements OnChanges, OnDestroy {
       return;
     }
     this._open = true;
+    this.showModal();
     this._openChanged.emit(true);
     this.modalStackService.trackModalOpen(this);
   }
@@ -147,17 +187,71 @@ export class ClrModal implements OnChanges, OnDestroy {
       return;
     }
     this._open = false;
+    this.hideModal();
   }
 
-  fadeDone(e: AnimationEvent) {
-    if (e.toState === 'void') {
-      // TODO: Investigate if we can decouple from animation events
+  onDialogTransitionEnd(event: TransitionEvent) {
+    if (event.target !== event.currentTarget || event.propertyName !== 'opacity' || this._open) {
+      return;
+    }
+
+    this.completeClose();
+  }
+
+  scrollTop() {
+    this.bodyElementRef.nativeElement.scrollTo(0, 0);
+  }
+
+  private showModal() {
+    this.rendered = true;
+    if (this.skipAnimation) {
+      this.dialogVisible = true;
+      return;
+    }
+
+    this.dialogVisible = false;
+    this.cancelScheduledShow();
+
+    const revealDialog = () => {
+      this.showAnimationFrame = null;
+      if (this.rendered && this._open) {
+        this.dialogVisible = true;
+      }
+    };
+
+    if (typeof globalThis.requestAnimationFrame === 'function') {
+      this.showAnimationFrame = globalThis.requestAnimationFrame(() => revealDialog());
+    } else {
+      queueMicrotask(revealDialog);
+    }
+  }
+
+  private hideModal() {
+    this.cancelScheduledShow();
+    if (!this.rendered) {
+      return;
+    }
+
+    this.dialogVisible = false;
+
+    if (this.skipAnimation) {
+      this.completeClose();
+    }
+  }
+
+  private completeClose() {
+    if (this.rendered) {
+      this.rendered = false;
+      this.dialogVisible = false;
       this._openChanged.emit(false);
       this.modalStackService.trackModalClose(this);
     }
   }
 
-  scrollTop() {
-    this.bodyElementRef.nativeElement.scrollTo(0, 0);
+  private cancelScheduledShow() {
+    if (this.showAnimationFrame !== null && typeof globalThis.cancelAnimationFrame === 'function') {
+      globalThis.cancelAnimationFrame(this.showAnimationFrame);
+      this.showAnimationFrame = null;
+    }
   }
 }

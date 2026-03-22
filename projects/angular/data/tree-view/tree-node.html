@@ -72,10 +72,12 @@
 </div>
 <div
   class="clr-treenode-children"
-  [@toggleChildrenAnim]="expandService.expanded ? 'expanded' : 'collapsed'"
+  [class.is-expanded]="expandService.expanded"
   [attr.role]="isExpandable() && !featuresService.recursion ? 'group' : null"
 >
-  <ng-content select="clr-tree-node"></ng-content>
-  <ng-content select="[clrIfExpanded]"></ng-content>
-  <clr-recursive-children [parent]="_model"></clr-recursive-children>
+  <div class="clr-treenode-children-content">
+    <ng-content select="clr-tree-node"></ng-content>
+    <ng-content select="[clrIfExpanded]"></ng-content>
+    <clr-recursive-children [parent]="_model"></clr-recursive-children>
+  </div>
 </div>

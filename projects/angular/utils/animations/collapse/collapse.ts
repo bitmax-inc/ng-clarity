@@ -9,6 +9,10 @@ import { animate, AnimationMetadata, state, style, transition } from '@angular/a
 
 import { defaultAnimationTiming } from '../constants';
 
+/**
+ * @deprecated Uses Angular's legacy animation engine via `@angular/animations`.
+ * Prefer CSS transitions/keyframes or `animate.enter` / `animate.leave` in application code.
+ */
 export function collapse(): AnimationMetadata[] {
   'use strict';
   return [

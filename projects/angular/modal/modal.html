@@ -5,22 +5,23 @@
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
 
-@if (_open) {
+@if (rendered) {
 <div class="modal" [class.modal-full-screen]="size == 'full-screen'">
-  <!--fixme: revisit when ngClass works with exit animation-->
   <div
     cdkTrapFocus
     [cdkTrapFocusAutoCapture]="true"
-    [@fadeMove]="fadeMove"
-    (@fadeMove.done)="fadeDone($event)"
     class="modal-dialog"
+    [class.is-open]="dialogOpen"
+    [class.no-animation]="skipAnimation"
     [class.modal-sm]="size == 'sm'"
     [class.modal-lg]="size == 'lg'"
     [class.modal-xl]="size == 'xl'"
+    [style.--clr-modal-dialog-closed-transform]="dialogClosedTransform"
     role="dialog"
     aria-modal="true"
     [attr.aria-hidden]="!_open"
     [attr.aria-labelledby]="labelledBy || modalId"
+    (transitionend)="onDialogTransitionEnd($event)"
   >
     <div class="clr-sr-only">{{commonStrings.keys.modalContentStart}}</div>
     <!-- This wizard is tightly coupled to the modal styles, so changes here could require changes in the wizard. -->
@@ -55,7 +56,13 @@
     <div class="clr-sr-only">{{commonStrings.keys.modalContentEnd}}</div>
   </div>
   @if (backdrop) {
-  <div [@fade] class="modal-backdrop" aria-hidden="true" (click)="backdropClick()"></div>
+  <div
+    class="modal-backdrop"
+    [class.is-open]="dialogOpen"
+    [class.no-animation]="skipAnimation"
+    aria-hidden="true"
+    (click)="backdropClick()"
+  ></div>
   }
 </div>
 }

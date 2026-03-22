@@ -5,7 +5,6 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 import { ClrLoadingState, LoadingListener } from '@clr/angular/utils';
 
@@ -15,20 +14,24 @@ const MIN_BUTTON_WIDTH = 42;
 @Component({
   selector: 'button[clrLoading]',
   template: `
-    <span @parent>
+    <span class="clr-loading-button-state">
       @switch (state) {
         @case (buttonState.LOADING) {
-          <span @spinner class="spinner spinner-inline"></span>
+          <span class="clr-loading-button-spinner-enter">
+            <span class="spinner spinner-inline"></span>
+          </span>
         }
         @case (buttonState.SUCCESS) {
           <span
-            @validated
-            (@validated.done)="this.loadingStateChange(this.buttonState.DEFAULT)"
-            class="spinner spinner-inline spinner-check"
-          ></span>
+            (animationend)="onValidatedAnimationDone()"
+            class="clr-loading-button-validated"
+            [class.clr-loading-button-validated]="true"
+          >
+            <span class="spinner spinner-inline spinner-check"></span>
+          </span>
         }
         @case (buttonState.DEFAULT) {
-          <span @defaultButton class="clr-loading-btn-content">
+          <span class="clr-loading-btn-content" [class.clr-loading-button-default-enter]="animateDefaultContent">
             <ng-content></ng-content>
           </span>
         }
@@ -36,36 +39,56 @@ const MIN_BUTTON_WIDTH = 42;
     </span>
   `,
   providers: [{ provide: LoadingListener, useExisting: ClrLoadingButton }],
-  animations: [
-    trigger('parent', [
-      // Skip :enter animation on first render.
-      // The button text/content should only be faded when transitioning to or from a non-default state.
-      transition(':enter', []),
-    ]),
-    trigger('defaultButton', [
-      transition(':enter', [style({ opacity: 0 }), animate('200ms 100ms ease-in', style({ opacity: 1 }))]),
-      // TODO: see if we can get leave animation to work before spinner's enter animation
-      transition(':leave', [style({ opacity: 0 })]),
-    ]),
-    trigger('spinner', [
-      transition(':enter', [style({ opacity: 0 }), animate('200ms 100ms ease-in', style({ opacity: 1 }))]),
-      transition(':leave', [style({ opacity: 1 }), animate('100ms ease-out', style({ opacity: 0 }))]),
-    ]),
-    trigger('validated', [
-      transition(':enter', [
-        animate(
-          '600ms',
-          keyframes([
-            style({ transform: 'scale(0,0)', offset: 0 }),
-            style({ opacity: 1, offset: 0.2 }),
-            style({ transform: 'scale(1.2,1.2)', offset: 0.4 }),
-            style({ transform: 'scale(.9,.9)', offset: 0.6 }),
-            style({ transform: 'scale(1,1)', offset: 1 }),
-          ])
-        ),
-      ]),
-      transition(':leave', [style({ opacity: 1 }), animate('100ms ease-out', style({ opacity: 0 }))]),
-    ]),
+  styles: [
+    `
+      .clr-loading-button-spinner-enter,
+      .clr-loading-button-validated,
+      .clr-loading-button-default-enter {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .clr-loading-button-spinner-enter,
+      .clr-loading-button-default-enter {
+        animation: clr-loading-button-fade-in 200ms 100ms ease-in both;
+      }
+
+      .clr-loading-button-validated {
+        animation: clr-loading-button-validated 600ms both;
+      }
+
+      @keyframes clr-loading-button-fade-in {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes clr-loading-button-validated {
+        0% {
+          transform: scale(0);
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        40% {
+          transform: scale(1.2);
+        }
+
+        60% {
+          transform: scale(0.9);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+    `,
   ],
   host: { '[attr.disabled]': "disabled? '' : null" },
   standalone: false,
@@ -77,6 +100,7 @@ export class ClrLoadingButton implements LoadingListener {
 
   buttonState = ClrLoadingState;
   state: ClrLoadingState = ClrLoadingState.DEFAULT;
+  animateDefaultContent = false;
 
   constructor(
     public el: ElementRef<HTMLButtonElement>,
@@ -87,7 +111,9 @@ export class ClrLoadingButton implements LoadingListener {
     if (state === this.state) {
       return;
     }
+    const previousState = this.state;
     this.state = state;
+    this.animateDefaultContent = state === ClrLoadingState.DEFAULT && previousState !== ClrLoadingState.DEFAULT;
 
     switch (state) {
       case ClrLoadingState.DEFAULT:
@@ -112,6 +138,10 @@ export class ClrLoadingButton implements LoadingListener {
         break;
     }
     this.clrLoadingChange.emit(state);
+  }
+
+  onValidatedAnimationDone(): void {
+    this.loadingStateChange(ClrLoadingState.DEFAULT);
   }
 
   private setExplicitButtonWidth() {

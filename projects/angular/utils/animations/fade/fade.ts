@@ -9,6 +9,10 @@ import { animate, AnimationMetadata, style, transition } from '@angular/animatio
 
 import { defaultAnimationTiming } from '../constants';
 
+/**
+ * @deprecated Uses Angular's legacy animation engine via `@angular/animations`.
+ * Prefer CSS transitions/keyframes or `animate.enter` / `animate.leave` in application code.
+ */
 export function fade(opacity = 1): AnimationMetadata[] {
   return [
     transition('void => *', [style({ opacity: 0 }), animate(defaultAnimationTiming, style({ opacity: opacity }))]),

@@ -87,7 +87,10 @@ export default function (): void {
         fixture.detectChanges();
         expect(navGroup.expandAnimationState).toBe('collapsed');
 
-        await fixture.whenStable();
+        compiled
+          .querySelector('.nav-group-children')
+          .dispatchEvent(new TransitionEvent('transitionend', { propertyName: 'grid-template-rows' }));
+        fixture.detectChanges();
         expect(navGroup.expanded).toBe(false);
         expect(expandService.expanded).toBe(false);
       });
@@ -103,8 +106,29 @@ export default function (): void {
 
         fixture.detectChanges();
 
-        await fixture.whenStable();
+        compiled
+          .querySelector('.nav-group-children')
+          .dispatchEvent(new TransitionEvent('transitionend', { propertyName: 'grid-template-rows' }));
+        fixture.detectChanges();
         expect(navGroup.expandAnimationState).toBe('collapsed');
+        expect(navGroup.expanded).toBe(false);
+      });
+
+      it('keeps the group expanded until the collapse animation completes', () => {
+        vertNavService.collapsible = true;
+
+        navGroup.toggleExpand();
+        fixture.detectChanges();
+        expect(navGroup.expanded).toBe(true);
+
+        vertNavService.collapsed = true;
+        fixture.detectChanges();
+
+        expect(navGroup.expandAnimationState).toBe('collapsed');
+        expect(navGroup.expanded).toBe(true);
+
+        navGroup.expandAnimationDone({ toState: 'collapsed' } as any);
+
         expect(navGroup.expanded).toBe(false);
       });
 
@@ -180,7 +204,10 @@ export default function (): void {
 
         // when stable because collapse animation happens first.
         // need when stable for the nav group to complete the animation.
-        await fixture.whenStable();
+        compiled
+          .querySelector('.nav-group-children')
+          .dispatchEvent(new TransitionEvent('transitionend', { propertyName: 'grid-template-rows' }));
+        fixture.detectChanges();
         expect(navGroup.expanded).toBe(false);
         expect(expandService.expanded).toBe(false);
       });
@@ -197,6 +224,30 @@ export default function (): void {
         await delay();
 
         expect(fixture.componentInstance.expandedChange).toBe(true);
+      });
+
+      it('does not collapse the group on non-collapse animation completions', () => {
+        navGroup.expanded = true;
+        fixture.detectChanges();
+
+        navGroup.expandAnimationDone({ toState: 'expanded', propertyName: 'grid-template-rows' } as any);
+
+        expect(navGroup.expanded).toBe(true);
+      });
+
+      it('ignores transitionend events from nested descendants', () => {
+        navGroup.expanded = true;
+        navGroup.expandAnimationState = 'collapsed';
+        fixture.detectChanges();
+
+        const childTarget = document.createElement('div');
+        navGroup.expandAnimationDone({
+          propertyName: 'grid-template-rows',
+          target: childTarget,
+          currentTarget: compiled.querySelector('.nav-group-children'),
+        } as any);
+
+        expect(navGroup.expanded).toBe(true);
       });
     });
 

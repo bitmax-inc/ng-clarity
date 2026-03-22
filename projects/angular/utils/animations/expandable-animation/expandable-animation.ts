@@ -5,12 +5,10 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { AnimationEvent, transition, trigger, useAnimation } from '@angular/animations';
-import { Component, HostBinding, HostListener, Input } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 
-import { DomAdapter } from '../../dom-adapter/dom-adapter';
-import { defaultExpandAnimation } from '../constants';
 import { BaseExpandableAnimation } from './base-expandable-animation';
+import { DomAdapter } from '../../dom-adapter/dom-adapter';
 
 @Component({
   selector: 'clr-expandable-animation',
@@ -22,28 +20,23 @@ import { BaseExpandableAnimation } from './base-expandable-animation';
       }
     `,
   ],
-  animations: [trigger('expandAnimation', [transition('true <=> false', [useAnimation(defaultExpandAnimation)])])],
   providers: [DomAdapter],
   standalone: false,
 })
-export class ClrExpandableAnimation extends BaseExpandableAnimation {
+export class ClrExpandableAnimation extends BaseExpandableAnimation implements OnChanges, OnDestroy {
   @Input() clrExpandTrigger = false;
 
-  @HostBinding('@expandAnimation')
-  get expandAnimation() {
-    return { value: this.clrExpandTrigger, params: { startHeight: this.startHeight } };
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['clrExpandTrigger'] && !changes['clrExpandTrigger'].firstChange) {
+      Promise.resolve().then(() => this.playAnimation());
+    }
   }
 
-  @HostListener('@expandAnimation.start', ['$event'])
-  animationStart(event: AnimationEvent) {
-    if (event.fromState !== 'void') {
-      this.initAnimationEffects();
-    }
+  ngOnDestroy() {
+    this.destroyAnimation();
   }
-  @HostListener('@expandAnimation.done', ['$event'])
-  animationDone(event: AnimationEvent) {
-    if (event.fromState !== 'void') {
-      this.cleanupAnimationEffects();
-    }
+
+  playAnimation() {
+    this.playHeightAnimation();
   }
 }

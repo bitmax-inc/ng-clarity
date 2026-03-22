@@ -57,6 +57,19 @@ export abstract class CollapsiblePanel implements OnInit {
     }
   }
 
+  handlePanelTransitionEnd(event: Event, panel: CollapsiblePanelModel) {
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+
+    const transitionEvent = event as TransitionEvent;
+    if (transitionEvent.propertyName && transitionEvent.propertyName !== 'grid-template-rows') {
+      return;
+    }
+
+    this.collapsePanelOnAnimationDone(panel);
+  }
+
   protected handlePanelInputChanges(changes: SimpleChanges) {
     if (this.panel && changes.panelOpen && changes.panelOpen.currentValue !== changes.panelOpen.previousValue) {
       this.panelService.togglePanel(this.id, changes.panelOpen.currentValue);

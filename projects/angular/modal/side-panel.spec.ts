@@ -8,7 +8,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { delay, expectActiveElementToBe } from '@clr/angular/testing';
 import { CdkTrapFocusModule, CdkTrapFocusModule_CdkTrapFocus } from '@clr/angular/utils';
 
@@ -68,7 +67,7 @@ describe('Side Panel', () => {
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      imports: [CdkTrapFocusModule, ClrSidePanelModule, NoopAnimationsModule],
+      imports: [CdkTrapFocusModule, ClrSidePanelModule],
       declarations: [TestComponent, TestDefaultsComponent],
     });
 
@@ -82,6 +81,12 @@ describe('Side Panel', () => {
 
   async function flushAndExpectOpen(componentFixture: ComponentFixture<any>, open: boolean) {
     componentFixture.detectChanges();
+    if (!open) {
+      componentFixture.nativeElement
+        .querySelector('.modal-dialog')
+        ?.dispatchEvent(new TransitionEvent('transitionend', { propertyName: 'opacity' }));
+      componentFixture.detectChanges();
+    }
     await delay();
 
     const text: string = componentFixture.nativeElement.textContent.trim();
@@ -100,8 +105,7 @@ describe('Side Panel', () => {
 
   it('should set aria-hidden attribute to false if opened', async () => {
     fixture.componentInstance.opened = false;
-    fixture.detectChanges();
-    expect(compiled.querySelector('.modal-dialog')).toBeNull();
+    await flushAndExpectOpen(fixture, false);
     // open modal
     sidePanel.open();
     fixture.detectChanges();
@@ -156,6 +160,9 @@ describe('Side Panel', () => {
 
     // todo: uncomment this after animation bug is fixed https://github.com/angular/angular/issues/15798
     // expect(fixture.componentInstance.opened).toBe(true);
+    fixture.nativeElement
+      .querySelector('.modal-dialog')
+      .dispatchEvent(new TransitionEvent('transitionend', { propertyName: 'opacity' }));
     await delay();
     expect(fixture.componentInstance.opened).toBe(false);
   });

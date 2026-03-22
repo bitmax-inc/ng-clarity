@@ -253,8 +253,22 @@
   .clr-treenode-children {
     //Dimensions
     margin-left: tree-view-variables.$clr-tree-node-children-margin;
-    will-change: height;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.2s ease-in-out;
+    will-change: grid-template-rows;
     overflow-y: hidden;
+    visibility: hidden;
+
+    > .clr-treenode-children-content {
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    &.is-expanded {
+      grid-template-rows: 1fr;
+      visibility: visible;
+    }
   }
 
   .clr-treenode-link {

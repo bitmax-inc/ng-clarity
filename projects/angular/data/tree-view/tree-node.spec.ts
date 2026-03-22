@@ -245,6 +245,20 @@ export default function (): void {
         this.clarityDirective.expanded = false;
         expect(this.testComponent.expanded).toBeFalse();
       });
+
+      it('updates the bound expanded state when the user toggles the caret', function (this: Context) {
+        const caret: HTMLElement = this.clarityElement.querySelector('.clr-treenode-caret');
+
+        expect(this.testComponent.expanded).toBeFalse();
+
+        caret.click();
+        this.detectChanges();
+        expect(this.testComponent.expanded).toBeTrue();
+
+        caret.click();
+        this.detectChanges();
+        expect(this.testComponent.expanded).toBeFalse();
+      });
     });
 
     describe('View', function () {
@@ -263,6 +277,15 @@ export default function (): void {
         this.detectChanges();
         expect(this.clarityElement.querySelector('.clr-treenode-children').clientHeight).not.toBe(0);
         expect(this.clarityElement.querySelector('.clr-treenode-children').textContent).toContain('Child');
+      });
+
+      it('toggles the expanded CSS class on the children container', function (this: Context) {
+        const childrenContainer = this.clarityElement.querySelector('.clr-treenode-children');
+        expect(childrenContainer.classList.contains('is-expanded')).toBeFalse();
+
+        this.clarityDirective.expanded = true;
+        this.detectChanges();
+        expect(childrenContainer.classList.contains('is-expanded')).toBeTrue();
       });
 
       it('adds the .clr-tree-node class to the host', function (this: Context) {

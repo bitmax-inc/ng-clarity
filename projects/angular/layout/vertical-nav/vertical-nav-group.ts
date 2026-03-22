@@ -5,7 +5,6 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { animate, AnimationEvent, state, style, transition, trigger } from '@angular/animations';
 import { AfterContentInit, Component, EventEmitter, HostBinding, Input, OnDestroy, Output } from '@angular/core';
 import { ClrCommonStringsService, IfExpandService } from '@clr/angular/utils';
 import { Subscription } from 'rxjs';
@@ -21,13 +20,6 @@ const COLLAPSED_STATE = 'collapsed';
   selector: 'clr-vertical-nav-group',
   templateUrl: './vertical-nav-group.html',
   providers: [IfExpandService, VerticalNavGroupService],
-  animations: [
-    trigger('clrExpand', [
-      state(EXPANDED_STATE, style({ height: '*' })),
-      state(COLLAPSED_STATE, style({ height: 0, visibility: 'hidden' })),
-      transition(`${EXPANDED_STATE} <=> ${COLLAPSED_STATE}`, animate('0.2s ease-in-out')),
-    ]),
-  ],
   host: { class: 'nav-group' },
   standalone: false,
 })
@@ -121,6 +113,10 @@ export class ClrVerticalNavGroup implements AfterContentInit, OnDestroy {
     }
   }
 
+  get isExpandedForAnimation(): boolean {
+    return this.expandAnimationState === EXPANDED_STATE;
+  }
+
   ngAfterContentInit() {
     // This makes sure that if someone marks a nav group expanded in a collapsed nav
     // the expanded property is switched back to collapsed state.
@@ -148,8 +144,23 @@ export class ClrVerticalNavGroup implements AfterContentInit, OnDestroy {
   }
 
   // closes a group after the collapse animation
-  expandAnimationDone($event: AnimationEvent) {
-    if ($event.toState === COLLAPSED_STATE) {
+  expandAnimationDone(
+    $event: Event | { toState?: string; propertyName?: string; target?: EventTarget; currentTarget?: EventTarget }
+  ) {
+    const toState = 'toState' in $event ? $event.toState : undefined;
+    const propertyName = 'propertyName' in $event ? $event.propertyName : undefined;
+    const target = 'target' in $event ? $event.target : undefined;
+    const currentTarget = 'currentTarget' in $event ? $event.currentTarget : undefined;
+
+    if (target && currentTarget && target !== currentTarget) {
+      return;
+    }
+
+    if (propertyName && propertyName !== 'grid-template-rows') {
+      return;
+    }
+
+    if (toState === COLLAPSED_STATE || (!toState && this.expandAnimationState === COLLAPSED_STATE)) {
       this.expanded = false;
     }
   }
