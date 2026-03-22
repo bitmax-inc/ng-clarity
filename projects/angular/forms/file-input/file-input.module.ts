@@ -8,7 +8,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ClrCommonFormsModule } from '@bitmax/clr-angular/forms/common';
-import { ClarityIcons, ClrIcon, errorStandardIcon, folderOpenIcon, successStandardIcon } from '@bitmax/clr-angular/icon';
+import {
+  ClarityIcons,
+  ClrIcon,
+  errorStandardIcon,
+  folderOpenIcon,
+  successStandardIcon,
+} from '@bitmax/clr-angular/icon';
 
 import { ClrFileInput } from './file-input';
 import { ClrFileInputContainer } from './file-input-container';
