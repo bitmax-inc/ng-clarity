@@ -4,6 +4,10 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@bitmax/clr-angular": ["../angular/index.ts"],
+      "@bitmax/clr-angular/*": ["../angular/*"],
+      "@bitmax/clr-addons": ["../addons/index.ts"],
+      "@bitmax/clr-addons/*": ["../addons/*"],
       "@clr/angular": ["../angular/index.ts"],
       "@clr/angular/*": ["../angular/*"],
       "@clr/addons": ["../addons/index.ts"],
