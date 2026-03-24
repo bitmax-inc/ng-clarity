@@ -5,6 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
+import { provideZonelessChangeDetection } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
@@ -38,5 +39,5 @@ loadTextEditIconSet();
 loadTravelIconSet();
 
 bootstrapApplication(AppComponent, {
-  providers: [provideAnimations(), provideRouter(appRoutes)],
+  providers: [provideZonelessChangeDetection(), provideAnimations(), provideRouter(appRoutes)],
 });

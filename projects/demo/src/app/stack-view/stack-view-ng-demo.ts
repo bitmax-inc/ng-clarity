@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Directive, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Directive, ViewChild } from '@angular/core';
 import { ClrStackBlock } from '@clr/angular';
 
 @Directive()
@@ -35,6 +35,8 @@ export class StackViewNgDemo {
   editModal = false;
   children: any[] = [];
 
+  constructor(protected cdr: ChangeDetectorRef) {}
+
   fetchChildren(): void {
     if (this.children.length > 0) {
       return;
@@ -45,6 +47,7 @@ export class StackViewNgDemo {
         { title: 'Sub-label 2', content: 'Sub-content 2' },
         { title: 'Sub-label 3', content: 'Sub-content 3' },
       ];
+      this.cdr.markForCheck();
     }, 2000);
   }
 

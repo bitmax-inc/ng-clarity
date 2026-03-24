@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 
 import { ProgBarExample } from './progbar-example';
 
@@ -13,17 +13,19 @@ import { ProgBarExample } from './progbar-example';
   selector: 'clr-progress-bar-colors-demo',
   styleUrls: ['progress-bars.demo.scss'],
   templateUrl: './progress-bar-colors.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class ProgressBarColorsDemo {
   colorTypes: ProgBarExample[];
 
-  constructor() {
+  constructor(cdr: ChangeDetectorRef) {
+    const requestRender = () => cdr.markForCheck();
     this.colorTypes = [
-      new ProgBarExample('', 'Normal'),
-      new ProgBarExample('success', 'Success'),
-      new ProgBarExample('warning', 'Warning'),
-      new ProgBarExample('danger', 'Danger'),
+      new ProgBarExample('', 'Normal', false, requestRender),
+      new ProgBarExample('success', 'Success', false, requestRender),
+      new ProgBarExample('warning', 'Warning', false, requestRender),
+      new ProgBarExample('danger', 'Danger', false, requestRender),
     ];
   }
 }

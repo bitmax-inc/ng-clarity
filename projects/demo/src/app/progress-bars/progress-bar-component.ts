@@ -5,12 +5,13 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
   selector: 'clr-progress-bar-component',
   styleUrls: ['progress-bars.demo.scss'],
   templateUrl: './progress-bar-component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class ProgressBarComponentDemo {
@@ -40,6 +41,8 @@ export class ProgressBarComponentDemo {
     },
   ];
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   toggle(name: string) {
     const example = this.examples.find(expl => expl.name === name);
 
@@ -54,12 +57,14 @@ export class ProgressBarComponentDemo {
         if (example.value >= 100) {
           clearInterval(example.interval);
         }
+        this.cdr.markForCheck();
       }, 1000);
     }
 
     if (!example.state) {
       example.value = 20;
       clearInterval(example.interval);
+      this.cdr.markForCheck();
     }
   }
 }

@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import {
   AppfxDatagridModule,
   ClientSideExportConfig,
@@ -22,6 +22,7 @@ import { Inventory, VmItem } from '../inventory/inventory';
   standalone: true,
   templateUrl: 'client-side-grid-demo.component.html',
   providers: [ExportProviderService, Inventory],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ClientSideDatagridDemoComponent {
   resetting = false;
@@ -79,7 +80,10 @@ export class ClientSideDatagridDemoComponent {
 
   protected exportConfig: ClientSideExportConfig;
 
-  constructor(private inventory: Inventory) {
+  constructor(
+    private inventory: Inventory,
+    private cdr: ChangeDetectorRef
+  ) {
     this.reset();
     this.exportConfig = this.getExportProperties();
   }
@@ -116,6 +120,7 @@ export class ClientSideDatagridDemoComponent {
       this.filteredVms = this.allVms;
       this.selectedVms = [];
       this.resetting = false;
+      this.cdr.markForCheck();
     });
   }
 
@@ -124,6 +129,7 @@ export class ClientSideDatagridDemoComponent {
     setTimeout(() => {
       this.options.loading = false;
       this.filteredVms = [...this.inventory.allItems];
+      this.cdr.markForCheck();
     }, 1000);
   }
 

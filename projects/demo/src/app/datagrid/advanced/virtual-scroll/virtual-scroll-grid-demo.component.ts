@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { AppfxDatagridModule, ColumnDefinition, ExportProviderService } from '@clr/addons/datagrid';
 import { ClrDatagridStateInterface, SelectionType } from '@clr/angular';
 
@@ -17,6 +17,7 @@ import { FetchResult, Inventory, VmItem } from '../inventory/inventory';
   standalone: true,
   templateUrl: 'virtual-scroll-grid-demo.component.html',
   providers: [ExportProviderService, Inventory],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class VirtualScrollGridDemoComponent {
   SelectionType = SelectionType;
@@ -97,8 +98,8 @@ export class VirtualScrollGridDemoComponent {
           skip: state.page.current * state.page.size,
           data: this.vmItems,
         };
-        this.cdr.detectChanges();
         this.options.loading = false;
+        this.cdr.markForCheck();
       });
   }
 
@@ -114,8 +115,8 @@ export class VirtualScrollGridDemoComponent {
           data: this.vmItems,
         };
         console.log(result);
-        this.cdr.detectChanges();
         this.options.loading = false;
+        this.cdr.markForCheck();
       });
   }
 
@@ -144,8 +145,8 @@ export class VirtualScrollGridDemoComponent {
           skip: 0,
           data: this.vmItems,
         };
-        this.cdr.detectChanges();
         this.resetting = false;
+        this.cdr.markForCheck();
       });
   }
 
@@ -158,8 +159,8 @@ export class VirtualScrollGridDemoComponent {
         skip: this.dataRange.skip,
         data: this.vmItems,
       };
-      this.cdr.detectChanges();
       this.options.loading = false;
+      this.cdr.markForCheck();
     }, this.inventory.latency);
   }
 }

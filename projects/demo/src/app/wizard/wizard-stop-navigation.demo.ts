@@ -5,12 +5,13 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { ClrWizard } from '@clr/angular';
 
 @Component({
   selector: 'clr-wizard-stop-navigation',
   templateUrl: './wizard-stop-navigation.demo.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class WizardStopNavigation {
@@ -21,6 +22,8 @@ export class WizardStopNavigation {
   loading = false;
   progress = 0;
   model = { won: '', too: '', tree: '' };
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   get readyToFinish() {
     return !this.untouched && !this.loading;
@@ -54,6 +57,7 @@ export class WizardStopNavigation {
           this.loading = false;
           clearInterval(timer);
         }
+        this.cdr.markForCheck();
       }, 1000);
     } else {
       this.wizard.forceFinish();

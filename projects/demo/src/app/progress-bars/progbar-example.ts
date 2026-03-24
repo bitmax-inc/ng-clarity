@@ -16,7 +16,8 @@ export class ProgBarExample {
   constructor(
     private label: string = 'demo',
     public title: string = 'Progress Bar',
-    public isLabeled: boolean = false
+    public isLabeled: boolean = false,
+    private onChange: () => void = () => {}
   ) {}
 
   cssClassnames(): string {
@@ -31,6 +32,7 @@ export class ProgBarExample {
     this.stop();
     this.value = 0;
     this.intervalId = -1;
+    this.onChange();
   }
 
   start(): void {
@@ -60,5 +62,6 @@ export class ProgBarExample {
       // many good things about TS. but this one is pretty lame...
       this.value = parseInt(myProgress + '', 10);
     }
+    this.onChange();
   }
 }

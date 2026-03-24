@@ -6,7 +6,7 @@
  */
 
 import { provideHttpClient } from '@angular/common/http';
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
 
@@ -17,6 +17,7 @@ import { moveFocusOnContentChangeProvider } from './move-focus-on-content-change
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideZonelessChangeDetection(),
     provideAnimations(),
     provideHttpClient(),
     provideRouter(appRoutes),

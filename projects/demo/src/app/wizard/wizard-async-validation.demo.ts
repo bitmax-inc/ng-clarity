@@ -5,12 +5,13 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { ClrWizard } from '@clr/angular';
 
 @Component({
   selector: 'clr-wizard-async-validation',
   templateUrl: './wizard-async-validation.demo.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class WizardAsyncValidation {
@@ -21,6 +22,8 @@ export class WizardAsyncValidation {
   answer = '';
   loadingFlag = false;
   errorFlag = false;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   // have to define doCancel because page will prevent doCancel from working
   // if the page had a previous button, you would need to call
@@ -41,6 +44,7 @@ export class WizardAsyncValidation {
         this.errorFlag = true;
       }
       this.loadingFlag = false;
+      this.cdr.markForCheck();
     }, 1000);
   }
 }

@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component, TrackByFunction } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, TrackByFunction } from '@angular/core';
 import { ClrDatagridItemsIdentityFunction, ClrDatagridStateInterface } from '@clr/angular';
 
 import { Inventory } from '../inventory/inventory';
@@ -19,6 +19,7 @@ import { PokemonFilter } from '../utils/pokemon-filter';
   providers: [Inventory],
   templateUrl: './full.html',
   styleUrls: ['../datagrid.demo.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class DatagridFullDemo {
@@ -49,7 +50,10 @@ export class DatagridFullDemo {
   pokemonComparator = new PokemonComparator();
   pokemonFilter = new PokemonFilter();
 
-  constructor(private inventory: Inventory) {
+  constructor(
+    private inventory: Inventory,
+    private cdr: ChangeDetectorRef
+  ) {
     this.reset();
   }
 
@@ -71,6 +75,7 @@ export class DatagridFullDemo {
         'Dynamic Action 3',
       ];
       this.rowActionsLoading = false;
+      this.cdr.markForCheck();
     }, 2000);
   }
 
@@ -94,6 +99,7 @@ export class DatagridFullDemo {
         this.users = this.inventory.all;
       }
       this.resetting = false;
+      this.cdr.markForCheck();
     });
   }
 
@@ -122,6 +128,7 @@ export class DatagridFullDemo {
     this.users = result.users;
     this.total = result.length;
     this.loading = false;
+    this.cdr.markForCheck();
   }
 
   clrDgActionOverflowOpenChangeFn(opened: boolean) {

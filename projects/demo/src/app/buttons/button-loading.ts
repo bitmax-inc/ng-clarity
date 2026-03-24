@@ -5,13 +5,14 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ClrLoadingState } from '@clr/angular';
 
 @Component({
   selector: 'clr-buttons-demo-button-loading',
   templateUrl: './button-loading.html',
   styleUrls: ['./buttons.demo.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class ButtonLoadingDemo {
@@ -26,11 +27,14 @@ export class ButtonLoadingDemo {
   submitSmState: ClrLoadingState = ClrLoadingState.DEFAULT;
   validateFalsyState: any;
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   disabledDemo() {
     this.disabledState = ClrLoadingState.LOADING;
     setTimeout(() => {
       this.disabledState = ClrLoadingState.SUCCESS;
       this.disabledStateDisabled = true;
+      this.cdr.markForCheck();
     }, 1500);
   }
 
@@ -39,6 +43,7 @@ export class ButtonLoadingDemo {
     setTimeout(() => {
       this.enabledState = ClrLoadingState.SUCCESS;
       this.enabledStateDisabled = false;
+      this.cdr.markForCheck();
     }, 1500);
   }
 
@@ -46,6 +51,7 @@ export class ButtonLoadingDemo {
     this.validateState = ClrLoadingState.LOADING;
     setTimeout(() => {
       this.validateState = ClrLoadingState.SUCCESS;
+      this.cdr.markForCheck();
     }, 1500);
   }
 
@@ -53,6 +59,7 @@ export class ButtonLoadingDemo {
     this.submitState = ClrLoadingState.LOADING;
     setTimeout(() => {
       this.submitState = ClrLoadingState.DEFAULT;
+      this.cdr.markForCheck();
     }, 1500);
   }
 
@@ -60,6 +67,7 @@ export class ButtonLoadingDemo {
     this.validateSmState = true;
     setTimeout(() => {
       this.validateSmState = false;
+      this.cdr.markForCheck();
     }, 1500);
   }
 
@@ -67,6 +75,7 @@ export class ButtonLoadingDemo {
     this.submitSmState = ClrLoadingState.LOADING;
     setTimeout(() => {
       this.submitSmState = ClrLoadingState.DEFAULT;
+      this.cdr.markForCheck();
     }, 1500);
   }
 
@@ -74,6 +83,7 @@ export class ButtonLoadingDemo {
     this.validateFalsyState = true;
     setTimeout(() => {
       this.validateFalsyState = null;
+      this.cdr.markForCheck();
     }, 1500);
   }
 }

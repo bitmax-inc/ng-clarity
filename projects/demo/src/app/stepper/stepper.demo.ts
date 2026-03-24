@@ -5,13 +5,14 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ClrLoadingState } from '@clr/angular';
 
 @Component({
   templateUrl: 'stepper.demo.html',
   styleUrls: ['./stepper.demo.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class StepperDemo {
@@ -34,10 +35,13 @@ export class StepperDemo {
   };
   loading = false;
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   loadingDemo() {
     this.state = ClrLoadingState.LOADING;
     setTimeout(() => {
       this.state = ClrLoadingState.SUCCESS;
+      this.cdr.markForCheck();
     }, 1500);
   }
 
@@ -62,6 +66,7 @@ export class StepperDemo {
     setTimeout(() => {
       this.initialStep = 'contact';
       this.loading = false;
+      this.cdr.markForCheck();
     }, 400);
   }
 

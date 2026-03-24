@@ -19,8 +19,7 @@
     "@bitmax/clr-ui": "CLARITY_VERSION_PLACEHOLDER",
     "@bitmax/clr-addons": "CLARITY_VERSION_PLACEHOLDER",
     "rxjs": "PLACEHOLDER",
-    "tslib": "PLACEHOLDER",
-    "zone.js": "PLACEHOLDER"
+    "tslib": "PLACEHOLDER"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "PLACEHOLDER",

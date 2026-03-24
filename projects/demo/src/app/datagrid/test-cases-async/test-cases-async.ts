@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 
 import { Inventory } from '../inventory/inventory';
 import { User } from '../inventory/user';
@@ -15,6 +15,7 @@ import { User } from '../inventory/user';
   providers: [Inventory],
   templateUrl: 'test-cases-async.html',
   styleUrls: ['../datagrid.demo.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class DatagridTestCasesAsyncDemo {
@@ -23,18 +24,20 @@ export class DatagridTestCasesAsyncDemo {
 
   loading = false;
 
-  constructor(inventory: Inventory) {
+  constructor(inventory: Inventory, cdr: ChangeDetectorRef) {
     inventory.size = 15;
     inventory.reset();
 
     setTimeout(() => {
       this.users = inventory.all;
+      cdr.markForCheck();
     }, 1000);
 
     this.users1 = inventory.all.slice(0, 5);
 
     setTimeout(() => {
       this.users1 = this.users1.concat(inventory.all.slice(5));
+      cdr.markForCheck();
     }, 3000);
   }
 

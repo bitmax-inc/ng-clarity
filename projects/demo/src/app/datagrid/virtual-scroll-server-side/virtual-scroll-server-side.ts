@@ -6,7 +6,7 @@
  */
 
 import { ListRange } from '@angular/cdk/collections';
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ClrDatagridItemsIdentityFunction, ClrDatagridStateInterface } from '@clr/angular';
 import { Observable } from 'rxjs';
 
@@ -19,6 +19,7 @@ import { ColorFilter } from '../utils/color-filter';
   providers: [Inventory],
   templateUrl: './virtual-scroll-server-side.html',
   styleUrls: ['../datagrid.demo.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class DatagridVirtualScrollServerSideDemo implements OnInit {
@@ -46,8 +47,7 @@ export class DatagridVirtualScrollServerSideDemo implements OnInit {
     this.users.subscribe(users => {
       // this.selected.push(users[0], users[7]);
       console.log(users[users.length - 1]);
-
-      this.cdr.detectChanges();
+      this.cdr.markForCheck();
     });
   }
 
@@ -66,7 +66,7 @@ export class DatagridVirtualScrollServerSideDemo implements OnInit {
       this._inventory.size += this.currentPageSize;
       this._inventory.lazyLoadUsers(this.currentPageSize);
       this.loadingMoreItems = false;
-      this.cdr.detectChanges();
+      this.cdr.markForCheck();
     }, 2000);
   }
 
@@ -87,8 +87,7 @@ export class DatagridVirtualScrollServerSideDemo implements OnInit {
       this._inventory.size = this.currentPageSize * 3;
       this._inventory.lazyLoadUsers(this._inventory.size);
       this.loadingMoreItems = false;
-
-      this.cdr.detectChanges();
+      this.cdr.markForCheck();
     }, 2000);
   }
 
@@ -114,5 +113,6 @@ export class DatagridVirtualScrollServerSideDemo implements OnInit {
 
     this._inventory.getAllUsersSubject().next(result.users);
     this.loading = false;
+    this.cdr.markForCheck();
   }
 }

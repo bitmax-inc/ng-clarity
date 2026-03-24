@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component, TrackByFunction } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, TrackByFunction } from '@angular/core';
 import { ClrDatagridItemsIdentityFunction, ClrDatagridStateInterface } from '@clr/angular';
 
 import { Inventory } from '../inventory/inventory';
@@ -16,6 +16,7 @@ import { User } from '../inventory/user';
   providers: [Inventory],
   templateUrl: 'selection-single.html',
   styleUrls: ['../datagrid.demo.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class DatagridSelectionSingleDemo {
@@ -34,7 +35,10 @@ export class DatagridSelectionSingleDemo {
   loading = true;
   total = 0;
 
-  constructor(private inventory: Inventory) {
+  constructor(
+    private inventory: Inventory,
+    private cdr: ChangeDetectorRef
+  ) {
     inventory.size = 100;
     inventory.latency = 500;
     inventory.reset();
@@ -64,6 +68,7 @@ export class DatagridSelectionSingleDemo {
       this.trackByIdServerUsers = result.users;
       this.total = result.length;
       this.loading = false;
+      this.cdr.markForCheck();
     });
   }
 

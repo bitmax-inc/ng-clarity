@@ -6,6 +6,8 @@
  */
 
 import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   ContentChild,
   ElementRef,
@@ -28,6 +30,7 @@ import { ModalStackService } from './modal-stack.service';
   selector: 'clr-modal',
   viewProviders: [ScrollingService],
   templateUrl: './modal.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [
     `
       :host {
@@ -101,7 +104,8 @@ export class ClrModal implements OnChanges, OnDestroy {
     private _scrollingService: ScrollingService,
     public commonStrings: ClrCommonStringsService,
     private modalStackService: ModalStackService,
-    private configuration: ClrModalConfigurationService
+    private configuration: ClrModalConfigurationService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   @HostBinding('class.open')
@@ -167,6 +171,7 @@ export class ClrModal implements OnChanges, OnDestroy {
     this.showModal();
     this._openChanged.emit(true);
     this.modalStackService.trackModalOpen(this);
+    this.cdr.markForCheck();
   }
 
   backdropClick(): void {
@@ -188,6 +193,7 @@ export class ClrModal implements OnChanges, OnDestroy {
     }
     this._open = false;
     this.hideModal();
+    this.cdr.markForCheck();
   }
 
   onDialogTransitionEnd(event: TransitionEvent) {
@@ -206,16 +212,19 @@ export class ClrModal implements OnChanges, OnDestroy {
     this.rendered = true;
     if (this.skipAnimation) {
       this.dialogVisible = true;
+      this.cdr.markForCheck();
       return;
     }
 
     this.dialogVisible = false;
     this.cancelScheduledShow();
+    this.cdr.markForCheck();
 
     const revealDialog = () => {
       this.showAnimationFrame = null;
       if (this.rendered && this._open) {
         this.dialogVisible = true;
+        this.cdr.markForCheck();
       }
     };
 
@@ -233,6 +242,7 @@ export class ClrModal implements OnChanges, OnDestroy {
     }
 
     this.dialogVisible = false;
+    this.cdr.markForCheck();
 
     if (this.skipAnimation) {
       this.completeClose();
@@ -245,6 +255,7 @@ export class ClrModal implements OnChanges, OnDestroy {
       this.dialogVisible = false;
       this._openChanged.emit(false);
       this.modalStackService.trackModalClose(this);
+      this.cdr.markForCheck();
     }
   }
 

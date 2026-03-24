@@ -5,21 +5,25 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
   selector: 'clr-loading-button-group-demo',
   templateUrl: './loading-button-group.html',
   styleUrls: ['../../button-group.demo.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class LoadingButtonGroupDemo {
   load = false;
 
+  constructor(private cdr: ChangeDetectorRef) {}
+
   startLoading(): void {
     this.load = true;
     setTimeout(() => {
       this.load = false;
+      this.cdr.markForCheck();
     }, 2000);
   }
 }

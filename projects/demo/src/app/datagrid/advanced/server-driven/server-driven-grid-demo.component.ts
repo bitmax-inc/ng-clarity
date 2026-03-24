@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { AppfxDatagridModule, ColumnDefinition, ExportProviderService } from '@clr/addons/datagrid';
 import { ClrDatagridStateInterface, SelectionType } from '@clr/angular';
 
@@ -17,6 +17,7 @@ import { FetchResult, Inventory, VmItem } from '../inventory/inventory';
   standalone: true,
   templateUrl: 'server-driven-grid-demo.component.html',
   providers: [ExportProviderService, Inventory],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ServerDrivenGridDemoComponent {
   SelectionType = SelectionType;
@@ -89,6 +90,7 @@ export class ServerDrivenGridDemoComponent {
       .subscribe((result: FetchResult) => {
         this.vmItems = result.vms;
         this.options.loading = false;
+        this.cdr.markForCheck();
       });
   }
 
@@ -113,6 +115,7 @@ export class ServerDrivenGridDemoComponent {
       .subscribe((data: FetchResult) => {
         this.vmItems = data.vms;
         this.resetting = false;
+        this.cdr.markForCheck();
       });
   }
 
@@ -121,6 +124,7 @@ export class ServerDrivenGridDemoComponent {
     setTimeout(() => {
       this.options.loading = false;
       this.vmItems = [...this.vmItems];
+      this.cdr.markForCheck();
     }, this.inventory.latency);
   }
 }

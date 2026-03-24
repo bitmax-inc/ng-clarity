@@ -163,6 +163,25 @@ describe('Modal', () => {
     expect(dialog.classList.contains('is-open')).toBe(true);
   });
 
+  it('marks for check when the scheduled open frame reveals the dialog', () => {
+    fixture.componentInstance.opened = false;
+    fixture.detectChanges();
+
+    const cdr = (modal as any).cdr;
+    spyOn(cdr, 'markForCheck').and.callThrough();
+
+    spyOn(globalThis, 'requestAnimationFrame').and.callFake(callback => {
+      callback(0);
+      return 1;
+    });
+
+    fixture.componentInstance.opened = true;
+    fixture.detectChanges();
+
+    expect(cdr.markForCheck).toHaveBeenCalled();
+    expect(fixture.nativeElement.querySelector('.modal-dialog')?.classList.contains('is-open')).toBe(true);
+  });
+
   it('renders when scroll service is overridden', async () => {
     const overrideFixture = TestBed.createComponent(TestOverrideScrollServiceComponent);
 

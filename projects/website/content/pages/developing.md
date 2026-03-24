@@ -152,6 +152,9 @@ import { AppComponent } from "./app.component";
 export class AppModule { }
 ```
 
+For Angular 21 applications, ZoneJS is also not required. Clarity's current demo, website, and
+StackBlitz templates run with Angular's zoneless change detection by default.
+
 If your application directly uses legacy helpers from `@bitmax/clr-angular/utils/animations` or
 `@bitmax/clr-angular/collapsible-panel`, those helpers still depend on `@angular/animations` and are
 deprecated. Prefer CSS transitions/keyframes or Angular's `animate.enter` / `animate.leave` APIs in

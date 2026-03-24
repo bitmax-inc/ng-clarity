@@ -5,7 +5,7 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 
 import { ProgBarExample } from './progbar-example';
 
@@ -13,16 +13,18 @@ import { ProgBarExample } from './progbar-example';
   selector: 'clr-progress-bar-examples-demo',
   styleUrls: ['progress-bars.demo.scss'],
   templateUrl: './progress-bar-examples.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
 export class ProgressBarExamplesDemo {
   examples: ProgBarExample[];
 
-  constructor() {
+  constructor(cdr: ChangeDetectorRef) {
+    const requestRender = () => cdr.markForCheck();
     this.examples = [
-      new ProgBarExample(),
-      new ProgBarExample('labeled', 'Labeled', true),
-      new ProgBarExample('progress-fade', 'Fade Out'),
+      new ProgBarExample('demo', 'Progress Bar', false, requestRender),
+      new ProgBarExample('labeled', 'Labeled', true, requestRender),
+      new ProgBarExample('progress-fade', 'Fade Out', false, requestRender),
     ];
   }
 }

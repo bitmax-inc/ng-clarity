@@ -8,24 +8,20 @@
 import 'zone.js';
 import 'zone.js/testing';
 
-import { NgModule, provideZoneChangeDetection } from '@angular/core';
+import { NgModule, provideZonelessChangeDetection } from '@angular/core';
 import { getTestBed } from '@angular/core/testing';
 import { BrowserTestingModule, platformBrowserTesting } from '@angular/platform-browser/testing';
 
 /**
- * ANGULAR 21 MIGRATION CONFIGURATION
- * * Why is this here?
- * In Angular 21, the `TestBed` no longer automatically links Zone.js to the Change Detection Scheduler.
- * Without this provider, `fixture.detectChanges()` runs disconnected from the Zone state, causing
- * `ExpressionChangedAfterItHasBeenCheckedError` (NG0100) in tests that were previously stable.
- * This module explicitly restores the Zone-based scheduler to fix those timing issues.
+ * Run TestBed with zoneless change detection so component tests match the runtime apps.
+ * Zone.js stays loaded here only for Jasmine helpers such as `fakeAsync` and `tick`.
  */
 @NgModule({
-  providers: [provideZoneChangeDetection({ eventCoalescing: true })],
+  providers: [provideZonelessChangeDetection()],
 })
-export class ZoneConfigModule {}
+export class ZonelessConfigModule {}
 
 // First, initialize the Angular testing environment.
-getTestBed().initTestEnvironment([BrowserTestingModule, ZoneConfigModule], platformBrowserTesting(), {
+getTestBed().initTestEnvironment([BrowserTestingModule, ZonelessConfigModule], platformBrowserTesting(), {
   teardown: { destroyAfterEach: false },
 });

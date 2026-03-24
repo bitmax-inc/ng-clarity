@@ -5,15 +5,16 @@
  * The full license information can be found in LICENSE in the root directory of this project.
  */
 
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'clr-progress-bar-inline-demo',
   styleUrls: ['progress-bars.demo.scss'],
   templateUrl: './progress-bar-inline.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,
 })
-export class ProgressBarInlineDemo implements OnInit {
+export class ProgressBarInlineDemo implements OnInit, OnDestroy {
   inlineProgress = 0;
   inlineProgressTimerId: any = -1;
 
@@ -21,6 +22,8 @@ export class ProgressBarInlineDemo implements OnInit {
   staticDangerValue = 0;
   staticSuccessValue = 0;
   staticLabeledProgbarValue = 0;
+
+  constructor(private cdr: ChangeDetectorRef) {}
 
   getNewValue(): number {
     const random: number = Math.floor(Math.random() * 98) + 1;
@@ -33,6 +36,7 @@ export class ProgressBarInlineDemo implements OnInit {
     this.staticDangerValue = this.getNewValue();
     this.staticSuccessValue = this.getNewValue();
     this.runProgressBar();
+    this.cdr.markForCheck();
   }
 
   stopProgressBar(): void {
@@ -40,6 +44,7 @@ export class ProgressBarInlineDemo implements OnInit {
       clearInterval(this.inlineProgressTimerId);
       this.inlineProgressTimerId = -1;
       this.inlineProgress = 0;
+      this.cdr.markForCheck();
     }
   }
 
@@ -58,6 +63,7 @@ export class ProgressBarInlineDemo implements OnInit {
       if (newProgressValue > 99) {
         this.stopProgressBar();
       }
+      this.cdr.markForCheck();
     }, 300);
   }
 
@@ -67,5 +73,9 @@ export class ProgressBarInlineDemo implements OnInit {
     setTimeout(() => {
       this.setNewValues();
     }, 800);
+  }
+
+  ngOnDestroy(): void {
+    this.stopProgressBar();
   }
 }
